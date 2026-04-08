@@ -1,1312 +1,782 @@
 <!DOCTYPE html>
-
 <html lang="pt">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>🇬🇷 Grécia — Junho 2026</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🇬🇷 Grécia — Filipe & Inês · Junho 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root {
-  --blue:#1A4F8A; --blue2:#2E73C8; --blue-pale:#E8F0FB;
-  --green:#2D6A4F; --green2:#3A8A63; --green-pale:#E8F5EE;
-  --purple:#5C3D8F; --purple2:#7D52B8; --purple-pale:#F0EAF8;
-  --gold:#C9A84C; --gold-pale:#FEF9E7;
-  --sand:#F7F3EC; --white:#fff; --text:#1A1A2E; --muted:#666;
-  --border:#E0E0E0; --light:#F5F5F5;
+:root{
+  --ink:#1c1c2e; --muted:#6b7280; --border:#e5e7eb; --sand:#f8f5f0; --white:#fff;
+  --blue:#1a4f8a; --blue2:#2e73c8; --blue-pale:#e8f0fb; --blue-light:#f0f6ff;
+  --teal:#0d6e6e; --teal2:#14a8a8; --teal-pale:#e6f5f5;
+  --olive:#4a6741; --olive2:#6a9462; --olive-pale:#edf4eb;
+  --gold:#b8860b; --gold2:#d4a017; --gold-pale:#fef9e7;
+  --red:#9b2335; --red-pale:#fdf0f2;
+  --opt-a:#0d6e6e; --opt-b:#4a6741;
+  --radius:12px; --shadow:0 2px 14px rgba(0,0,0,.08);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Georgia',serif;background:var(--sand);color:var(--text);line-height:1.7}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--sand);color:var(--ink);line-height:1.65;font-size:15px}
+h1,h2,h3,h4{font-family:'Playfair Display',serif}
+a{color:inherit}
 
-/* HERO */
-.hero{background:linear-gradient(150deg,#0d2a5e,#1a5276 50%,#2e9fd4);color:#fff;text-align:center;padding:72px 20px 56px;position:relative;overflow:hidden}
-.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:64px;background:var(--sand);clip-path:ellipse(55% 100% at 50% 100%)}
-.hero h1{font-size:3rem;font-weight:normal;letter-spacing:2px;text-shadow:0 2px 10px rgba(0,0,0,.3)}
-.hero-sub{font-style:italic;font-size:1.05rem;opacity:.85;margin-top:10px}
-.hero-pills{display:flex;justify-content:center;gap:12px;margin-top:22px;flex-wrap:wrap}
-.hero-pill{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:6px 16px;font-size:.85rem}
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(155deg,#091a3d 0%,#0d3060 40%,#0d6060 70%,#1a8a6a 100%);
+  color:#fff;padding:64px 20px 80px;text-align:center;position:relative;overflow:hidden
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:60px;background:var(--sand);clip-path:ellipse(55% 100% at 50% 100%)}
+.hero-flag{font-size:3rem;margin-bottom:12px;position:relative}
+.hero-title{font-size:2.8rem;font-weight:400;letter-spacing:1px;position:relative}
+.hero-sub{font-style:italic;opacity:.8;margin-top:8px;font-size:1rem;position:relative}
+.hero-dates{display:inline-block;margin-top:16px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:24px;padding:7px 22px;font-size:.88rem;position:relative}
+.hero-pills{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px;position:relative}
+.hero-pill{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:5px 14px;font-size:.8rem}
 
-/* NAV */
-.nav{display:flex;justify-content:center;gap:10px;padding:28px 16px 8px;flex-wrap:wrap}
-.nav-btn{padding:9px 22px;border-radius:24px;border:none;cursor:pointer;font-size:.93rem;font-family:Georgia,serif;font-weight:bold;transition:opacity .2s}
-.nav-btn.a{background:var(--blue);color:#fff}
-.nav-btn.b{background:var(--green);color:#fff}
-.nav-btn.c{background:var(--purple);color:#fff}
-.nav-btn:hover{opacity:.85}
-.nav-dots{display:flex;justify-content:center;gap:8px;margin-bottom:4px}
-.dot{width:8px;height:8px;border-radius:50%;background:#ccc;transition:background .2s}
-.dot.a.on{background:var(--blue)}.dot.b.on{background:var(--green)}.dot.c.on{background:var(--purple)}
+/* ── TABS ── */
+.tabs{display:flex;gap:0;justify-content:center;padding:28px 16px 0;position:sticky;top:0;z-index:100;background:var(--sand);border-bottom:2px solid var(--border)}
+.tab{padding:11px 28px;border:none;background:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.92rem;font-weight:500;color:var(--muted);border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .2s}
+.tab.active{color:var(--blue);border-bottom-color:var(--blue)}
+.tab-content{display:none}.tab-content.active{display:block}
 
-/* ITINERARY */
-.itin{display:none}.itin.on{display:block}
+/* ── ROUTE RIBBON ── */
+.ribbon{max-width:900px;margin:28px auto 0;padding:0 16px}
+.ribbon-box{background:var(--white);border-radius:var(--radius);padding:14px 18px;box-shadow:var(--shadow);display:flex;flex-wrap:wrap;align-items:center;gap:5px;justify-content:center}
+.rnode{display:flex;align-items:center;gap:5px}
+.rname{border-radius:14px;padding:4px 12px;font-size:.8rem;font-weight:500}
+.rname.t{background:var(--blue-pale);color:var(--blue)}
+.rname.n{background:var(--olive-pale);color:var(--olive)}
+.rname.s{background:var(--teal-pale);color:var(--teal)}
+.rname.opt{background:#f3f0ff;color:#5c3d8f;font-style:italic}
+.rdays{font-size:.7rem;color:var(--muted);background:#f3f4f6;border-radius:8px;padding:2px 7px}
+.rarrow{color:#ccc;font-size:.9rem}
 
-/* ITIN HEADER */
-.itin-top{padding:44px 20px 36px;text-align:center}
-.itin-top.a{background:linear-gradient(135deg,#0d2a5e,#1a6fa8,#2e9fd4);color:#fff}
-.itin-top.b{background:linear-gradient(135deg,#1a3d28,#2d6a4f,#48a975);color:#fff}
-.itin-top.c{background:linear-gradient(135deg,#2d1b5e,#5c3d8f,#8e6bbf);color:#fff}
-.itin-label{font-size:.75rem;letter-spacing:4px;text-transform:uppercase;opacity:.75;margin-bottom:6px}
-.itin-title{font-size:2.2rem;font-weight:normal;margin-bottom:8px}
-.itin-sub{font-style:italic;font-size:1rem;opacity:.82}
-.itin-pills{display:flex;justify-content:center;gap:12px;margin-top:20px;flex-wrap:wrap}
-.itin-pill{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:16px;padding:5px 16px;font-size:.82rem}
+/* ── OPTION BANNER ── */
+.option-banner{max-width:900px;margin:24px auto 0;padding:0 16px}
+.option-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.option-card{border-radius:var(--radius);padding:14px 18px;border:2px solid transparent;cursor:pointer;transition:all .2s}
+.option-card.a{background:var(--teal-pale);border-color:var(--teal)}
+.option-card.b{background:var(--olive-pale);border-color:var(--olive)}
+.option-card h4{font-family:'DM Sans',sans-serif;font-size:.88rem;font-weight:600;margin-bottom:4px}
+.option-card.a h4{color:var(--teal)}
+.option-card.b h4{color:var(--olive)}
+.option-card p{font-size:.8rem;color:var(--muted);line-height:1.5}
 
-/* ROUTE RIBBON */
-.ribbon{max-width:820px;margin:28px auto 0;padding:0 16px}
-.ribbon-inner{background:#fff;border-radius:12px;padding:16px 20px;box-shadow:0 2px 12px rgba(0,0,0,.07);display:flex;flex-wrap:wrap;align-items:center;gap:4px;justify-content:center}
-.rnode{display:flex;align-items:center;gap:4px}
-.rname{border-radius:16px;padding:4px 12px;font-size:.82rem;font-weight:bold}
-.rname.a{background:var(--blue-pale);color:var(--blue)}
-.rname.b{background:var(--green-pale);color:var(--green)}
-.rname.c{background:var(--purple-pale);color:var(--purple)}
-.rdays{font-size:.72rem;color:var(--muted);background:var(--light);border-radius:8px;padding:2px 7px}
-.rarrow{color:#bbb}
+/* ── SECTION HEADING ── */
+.sec-head{max-width:900px;margin:36px auto 0;padding:0 16px}
+.sec-head h2{font-size:1.5rem;font-weight:400;color:var(--ink);border-bottom:2px solid var(--border);padding-bottom:10px}
 
-/* VOOS SECTION */
-.voos-wrap{max-width:820px;margin:32px auto 0;padding:0 16px}
-.voos-box{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.07)}
-.voos-head{padding:14px 20px;display:flex;align-items:center;gap:10px}
-.voos-head.a{background:var(--blue-pale)}.voos-head.b{background:var(--green-pale)}.voos-head.c{background:var(--purple-pale)}
-.voos-head-text{font-weight:bold;font-size:.95rem}
-.voos-head-text.a{color:var(--blue)}.voos-head-text.b{color:var(--green)}.voos-head-text.c{color:var(--purple)}
-.voos-table{width:100%;border-collapse:collapse;font-size:.85rem}
-.voos-table th{padding:9px 14px;background:var(--light);color:var(--muted);font-weight:normal;text-align:left;border-bottom:1px solid var(--border)}
-.voos-table td{padding:9px 14px;border-bottom:1px solid var(--border)}
-.voos-table tr:last-child td{border-bottom:none}
-.voos-table tr:nth-child(even) td{background:#fafafa}
-.price-a{font-weight:bold;color:var(--blue)}.price-b{font-weight:bold;color:var(--green)}.price-c{font-weight:bold;color:var(--purple)}
-.voos-note{padding:12px 20px;font-size:.8rem;color:var(--muted);background:#fafafa;border-top:1px solid var(--border)}
-.voos-total-row{background:var(--blue-pale)!important}
-.voos-total-row.b td{background:var(--green-pale)!important}
-.voos-total-row.c td{background:var(--purple-pale)!important}
+/* ── STOP BLOCK ── */
+.stop-wrap{max-width:900px;margin:24px auto 0;padding:0 16px}
+.stop{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.stop-header{padding:16px 20px;display:flex;align-items:flex-start;gap:14px;color:#fff}
+.stop-header.th{background:linear-gradient(135deg,#0d2a5e,#1a4f8a)}
+.stop-header.ol{background:linear-gradient(135deg,#1a2a1a,#2d5a2d,#4a8a4a)}
+.stop-header.me{background:linear-gradient(135deg,#2d1b5e,#5c3d8f,#8060c0)}
+.stop-header.al{background:linear-gradient(135deg,#0d4a4a,#0d7070,#14a0a0)}
+.stop-header.de{background:linear-gradient(135deg,#3d2200,#7a4a0a,#b8860b)}
+.stop-header.na{background:linear-gradient(135deg,#3d1a1a,#7a2020,#b83030)}
+.stop-header.at{background:linear-gradient(135deg,#1a2a5e,#2560b0,#4080d0)}
+.stop-header.nx{background:linear-gradient(135deg,#0d3d5e,#0d6070,#14a0a0)}
+.stop-header.mi{background:linear-gradient(135deg,#3d1a00,#7a3a0a,#c04a00)}
+.stop-meta{flex:1}
+.stop-num{font-size:.73rem;opacity:.75;font-style:italic;margin-bottom:2px}
+.stop-name{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:400}
+.stop-theme{font-style:italic;font-size:.83rem;opacity:.82;margin-top:3px}
+.stop-nights{background:rgba(255,255,255,.18);border-radius:10px;padding:4px 11px;font-size:.77rem;align-self:center;white-space:nowrap}
 
-/* DAYS */
-.days-wrap{max-width:820px;margin:0 auto;padding:0 16px 40px}
+/* ── PHOTO GALLERY ── */
+.photo-gallery{display:grid;gap:4px;padding:8px 12px 6px;border-bottom:1px solid var(--border)}
+.photo-gallery.n2{grid-template-columns:1fr 1fr}
+.photo-gallery.n3{grid-template-columns:1fr 1fr 1fr}
+.photo-item{overflow:hidden;border-radius:6px;background:#e8e8e8}
+.photo-item a{display:block}
+.photo-item img{width:100%;height:130px;object-fit:cover;object-position:center 40%;display:block;transition:transform .4s,filter .3s;filter:brightness(.97)}
+.photo-item:hover img{transform:scale(1.05);filter:brightness(1.04)}
+.photo-caption{font-size:.63rem;color:var(--muted);text-align:center;padding:3px 3px 1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.photo-item.loading{background:linear-gradient(90deg,#ebebeb 25%,#f5f5f5 50%,#ebebeb 75%);background-size:400% 100%;animation:shimmer 1.4s ease infinite}
+.photo-item.loading::after{content:'';display:block;height:130px}
+@keyframes shimmer{0%{background-position:100% 0}100%{background-position:-100% 0}}
 
-.day-block{margin-top:28px}
-.day-header{border-radius:12px 12px 0 0;padding:14px 20px;color:#fff;display:flex;align-items:center;gap:14px}
-.day-header.a{background:var(--blue)}.day-header.b{background:var(--green)}.day-header.c{background:var(--purple)}
-.day-num{font-size:.8rem;opacity:.8;white-space:nowrap;font-style:italic}
-.day-loc{font-size:1.2rem;font-weight:bold}
-.day-theme{font-style:italic;font-size:.88rem;opacity:.85;margin-left:auto;text-align:right}
+/* ── STOP BODY SECTIONS ── */
+.stop-section{padding:15px 20px;border-bottom:1px solid var(--border)}
+.stop-section:last-child{border-bottom:none}
+.section-label{font-size:.72rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.items{display:flex;flex-direction:column;gap:7px}
+.item{font-size:.86rem;line-height:1.6;padding-left:16px;position:relative;color:var(--ink)}
+.item::before{content:'›';position:absolute;left:0;color:var(--muted)}
+.item b{color:var(--ink)}
+.item a.wl{color:inherit;text-decoration:none;border-bottom:1px dashed rgba(0,0,0,.25);transition:border-color .15s}
+.item a.wl:hover{border-bottom-color:var(--blue2)}
 
-.day-body{background:#fff;border-radius:0 0 12px 12px;box-shadow:0 2px 10px rgba(0,0,0,.07)}
+/* ── SLEEP BOX ── */
+.sleep-box{margin:0 18px 16px;border-radius:10px;padding:13px 16px;font-size:.84rem;line-height:1.6}
+.sleep-box.th{background:var(--blue-pale);border-left:4px solid var(--blue)}
+.sleep-box.ol{background:var(--olive-pale);border-left:4px solid var(--olive)}
+.sleep-box.me{background:#f0eaf8;border-left:4px solid #6040a0}
+.sleep-box.al{background:var(--teal-pale);border-left:4px solid var(--teal)}
+.sleep-box.de{background:var(--gold-pale);border-left:4px solid var(--gold)}
+.sleep-box.na{background:var(--red-pale);border-left:4px solid var(--red)}
+.sleep-box.at{background:var(--blue-pale);border-left:4px solid var(--blue2)}
+.sleep-box.nx{background:var(--teal-pale);border-left:4px solid var(--teal)}
+.sleep-box.mi{background:#fdf0e8;border-left:4px solid #c04a00}
+.sleep-label{font-size:.75rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px}
+.sleep-label.th{color:var(--blue)} .sleep-label.ol{color:var(--olive)} .sleep-label.me{color:#6040a0}
+.sleep-label.al{color:var(--teal)} .sleep-label.de{color:var(--gold)} .sleep-label.na{color:var(--red)}
+.sleep-label.at{color:var(--blue2)} .sleep-label.nx{color:var(--teal)} .sleep-label.mi{color:#c04a00}
+.sleep-option{display:flex;align-items:baseline;gap:8px;margin-top:5px;font-size:.83rem}
+.sleep-badge{display:inline-flex;align-items:center;gap:3px;border-radius:10px;padding:2px 9px;font-size:.75rem;font-weight:500;color:#fff;white-space:nowrap}
+.sb-blue{background:var(--blue)} .sb-teal{background:var(--teal)} .sb-olive{background:var(--olive)}
+.sb-gold{background:var(--gold)} .sb-red{background:var(--red)} .sb-camp{background:#16a34a}
+.sb-purple{background:#6040a0} .sb-orange{background:#c04a00}
 
-.day-section{padding:16px 20px;border-bottom:1px solid var(--border)}
-.day-section:last-child{border-bottom:none}
-.day-section-title{font-size:.8rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;display:flex;align-items:center;gap:6px}
-.day-items{display:flex;flex-direction:column;gap:7px}
-.day-item{font-size:.88rem;color:var(--text);line-height:1.6;padding-left:18px;position:relative}
-.day-item::before{content:'›';position:absolute;left:0;color:var(--muted)}
-.day-item b{color:var(--text)}
+/* ── TRANSPORT ROW ── */
+.transport{display:flex;align-items:flex-start;gap:10px;padding:10px 20px;font-size:.83rem;border-top:1px dashed var(--border);color:var(--ink);background:#fafafa}
+.transport-icon{font-size:1rem;flex-shrink:0;margin-top:1px}
 
-.sleep-box{margin:0 20px 16px;border-radius:10px;padding:12px 16px;font-size:.86rem;line-height:1.6}
-.sleep-box.a{background:var(--blue-pale);border-left:4px solid var(--blue)}
-.sleep-box.b{background:var(--green-pale);border-left:4px solid var(--green)}
-.sleep-box.c{background:var(--purple-pale);border-left:4px solid var(--purple)}
-.sleep-label{font-weight:bold;font-size:.78rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
-.sleep-label.a{color:var(--blue)}.sleep-label.b{color:var(--green)}.sleep-label.c{color:var(--purple)}
-.sleep-price{display:inline-block;margin-top:6px;border-radius:10px;padding:2px 10px;font-size:.78rem;font-weight:bold;color:#fff}
-.sleep-price.a{background:var(--blue)}.sleep-price.b{background:var(--green)}.sleep-price.c{background:var(--purple)}
-.sleep-price.camp{background:var(--gold)}
+/* ── TIP BOX ── */
+.tip{margin:0 18px 14px;background:var(--gold-pale);border-left:4px solid var(--gold);border-radius:10px;padding:11px 14px;font-size:.83rem;color:#7a5000;line-height:1.6}
 
-.tip-box{margin:0 20px 16px;background:var(--gold-pale);border-left:4px solid var(--gold);border-radius:10px;padding:11px 14px;font-size:.84rem;color:#7a5c00;line-height:1.6}
+/* ── FESTIVAL BOX ── */
+.fest-wrap{margin:0 18px 16px}
+.fest-box{background:var(--white);border-radius:10px;border-left:5px solid var(--gold);padding:13px 16px;box-shadow:0 1px 6px rgba(0,0,0,.06)}
+.fest-name{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:600;margin-bottom:2px}
+.fest-status{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:2px 8px;border-radius:8px;margin-bottom:5px}
+.fest-status.confirmed{background:#dcfce7;color:#15803d}
+.fest-status.watch{background:#fef9c3;color:#854d0e}
+.fest-status.missed{background:#f3f4f6;color:#6b7280}
+.fest-desc{font-size:.83rem;color:var(--muted);line-height:1.6}
+.fest-link{display:inline-block;margin-top:6px;font-size:.8rem;color:var(--blue2);text-decoration:none;border-bottom:1px solid var(--blue2)}
+.fest-link:hover{opacity:.8}
 
-.transport-row{display:flex;align-items:flex-start;gap:10px;padding:10px 20px;font-size:.85rem;border-top:1px dashed var(--border)}
-.transport-icon{font-size:1rem;flex-shrink:0;margin-top:2px}
+/* ── OPTION TAG ── */
+.opt-tag{display:inline-flex;align-items:center;gap:4px;border-radius:8px;padding:3px 10px;font-size:.76rem;font-weight:600;margin-bottom:8px}
+.opt-tag.a{background:var(--teal-pale);color:var(--teal)}
+.opt-tag.b{background:var(--olive-pale);color:var(--olive)}
 
-/* BUDGET TABLE */
-.budget-wrap{max-width:820px;margin:32px auto 0;padding:0 16px 8px}
-.budget-box{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.07)}
-.budget-head{padding:14px 20px;font-weight:bold;font-size:.95rem}
-.budget-head.a{background:var(--blue-pale);color:var(--blue)}
-.budget-head.b{background:var(--green-pale);color:var(--green)}
-.budget-head.c{background:var(--purple-pale);color:var(--purple)}
-.budget-table{width:100%;border-collapse:collapse;font-size:.87rem}
-.budget-table td{padding:9px 16px;border-bottom:1px solid var(--border)}
+/* ── BUDGET TABLE ── */
+.budget-wrap{max-width:900px;margin:32px auto 0;padding:0 16px 8px}
+.budget-box{background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.budget-head{padding:14px 20px;font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:400;background:var(--blue-pale);color:var(--blue)}
+.budget-table{width:100%;border-collapse:collapse;font-size:.85rem}
+.budget-table td{padding:9px 18px;border-bottom:1px solid var(--border)}
 .budget-table tr:last-child td{border-bottom:none}
 .budget-table tr:nth-child(even) td{background:#fafafa}
-.budget-table .val{text-align:right;font-weight:bold}
-.budget-total td{background:var(--blue-pale)!important;font-weight:bold;font-size:.98rem}
-.budget-total.b td{background:var(--green-pale)!important}
-.budget-total.c td{background:var(--purple-pale)!important}
-.budget-total .val{font-size:1.1rem}
-.budget-total .val.a{color:var(--blue)}.budget-total .val.b{color:var(--green)}.budget-total .val.c{color:var(--purple)}
-.budget-note{padding:12px 16px;font-size:.8rem;color:var(--muted);background:#fafafa;font-style:italic}
-.saving{color:#2d6a4f;font-size:.78rem;margin-left:6px}
+.budget-table .val{text-align:right;font-weight:600;color:var(--blue)}
+.budget-total td{background:var(--blue-pale)!important;font-weight:700;font-size:.95rem}
+.budget-note{padding:11px 18px;font-size:.79rem;color:var(--muted);font-style:italic;background:#fafafa}
 
-/* CAMP TAG */
-.camp-tag{background:#e8f5ee;color:var(--green);border-radius:8px;padding:1px 8px;font-size:.75rem;font-weight:bold;margin-left:6px}
+/* ── LEFT OUT TAB ── */
+.leftout-grid{max-width:900px;margin:28px auto;padding:0 16px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.lo-card{background:var(--white);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+.lo-card h3{font-family:'Playfair Display',serif;font-size:1rem;font-weight:600;margin-bottom:4px;color:var(--ink)}
+.lo-card p{font-size:.83rem;color:var(--muted);line-height:1.55}
+.lo-reason{display:inline-block;margin-top:8px;font-size:.75rem;background:#f3f4f6;color:var(--muted);border-radius:8px;padding:2px 9px}
 
-/* FESTIVAL BOX */
-.fest-box{background:#fff;border-radius:12px;border-left:5px solid var(--gold);padding:14px 16px;margin-bottom:12px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
-.fest-name{font-weight:bold;font-size:.95rem;margin-bottom:2px}
-.fest-date{font-size:.76rem;color:var(--gold);font-weight:bold;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
-.fest-desc{font-size:.84rem;color:var(--muted);line-height:1.6}
-.fest-link{display:inline-block;margin-top:6px;font-size:.8rem;color:var(--blue2);text-decoration:none;border-bottom:1px solid var(--blue2)}
+/* ── FOOTER ── */
+.footer{background:var(--ink);color:rgba(255,255,255,.45);text-align:center;padding:22px;font-size:.76rem;margin-top:12px}
 
-/* COMPARE */
-.compare-wrap{max-width:820px;margin:0 auto;padding:16px 16px 60px}
-.compare-table{width:100%;border-collapse:collapse;font-size:.87rem;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.08)}
-.compare-table th{padding:12px 14px;text-align:center;color:#fff}
-.compare-table th:first-child{text-align:left;background:#1a1a2e}
-.compare-table th.a{background:var(--blue)}
-.compare-table th.b{background:var(--green)}
-.compare-table th.c{background:var(--purple)}
-.compare-table td{padding:10px 14px;border-bottom:1px solid var(--border);text-align:center}
-.compare-table td:first-child{text-align:left;font-weight:bold;font-size:.82rem}
-.compare-table tr:nth-child(even) td{background:#fafafa}
-.compare-table tr:last-child td{border-bottom:none}
-.best{font-weight:bold}
-
-/* SECTION HEADER */
-.sec-head{font-size:1rem;font-weight:bold;margin:28px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--border);display:flex;align-items:center;gap:8px}
-.sec-head.a{color:var(--blue);border-color:var(--blue-pale)}
-.sec-head.b{color:var(--green);border-color:var(--green-pale)}
-.sec-head.c{color:var(--purple);border-color:var(--purple-pale)}
-
-.footer{background:var(--text);color:rgba(255,255,255,.5);text-align:center;padding:24px;font-size:.78rem;margin-top:8px}
-
+/* ── RESPONSIVE ── */
 @media(max-width:600px){
-  .hero h1{font-size:2rem}
-  .itin-title{font-size:1.6rem}
-  .day-header{flex-direction:column;align-items:flex-start;gap:4px}
-  .day-theme{margin-left:0;text-align:left}
-  .voos-table th:nth-child(3),.voos-table td:nth-child(3){display:none}
+  .hero-title{font-size:2rem}
+  .option-row{grid-template-columns:1fr}
+  .stop-header{flex-wrap:wrap}
+  .stop-nights{align-self:auto}
+  .photo-gallery.n3{grid-template-columns:1fr 1fr}
+  .photo-item img{height:100px!important}
+  .photo-item.loading::after{height:100px}
+  .leftout-grid{grid-template-columns:1fr}
 }
-
-/* ── PHOTO GALLERY ─────────────────────────────────────────────────── */
-.photo-gallery {
-  display: grid;
-  gap: 4px;
-  padding: 8px 12px 6px;
-  border-bottom: 1px solid var(--border);
-}
-.photo-gallery.n2 { grid-template-columns: 1fr 1fr; }
-.photo-gallery.n3 { grid-template-columns: 1fr 1fr 1fr; }
-.photo-gallery.n4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
-.photo-item {
-  overflow: hidden; border-radius: 6px;
-  background: #e8e8e8;
-  position: relative;
-}
-.photo-item a { display: block; }
-.photo-item img {
-  width: 100%; height: 140px;
-  object-fit: cover; object-position: center 40%;
-  display: block;
-  transition: transform .4s cubic-bezier(.25,.46,.45,.94), filter .3s;
-  filter: brightness(0.97);
-}
-.photo-gallery.n4 .photo-item img { height: 110px; }
-.photo-item:hover img {
-  transform: scale(1.06);
-  filter: brightness(1.05);
-}
-.photo-caption {
-  font-size: .64rem; color: var(--muted);
-  text-align: center; padding: 3px 4px 1px;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-  line-height: 1.35;
-}
-/* shimmer loader */
-.photo-item.loading {
-  background: linear-gradient(90deg,#ebebeb 25%,#f5f5f5 50%,#ebebeb 75%);
-  background-size: 400% 100%;
-  animation: shimmer 1.4s ease infinite;
-}
-.photo-item.loading::after {
-  content: ''; display: block; height: 140px;
-}
-@keyframes shimmer { 0%{background-position:100% 0} 100%{background-position:-100% 0} }
-.photo-item.failed { display: none; }
-
-@media(max-width:600px) {
-  .photo-gallery.n3,.photo-gallery.n4 { grid-template-columns: 1fr 1fr; }
-  .photo-item img { height: 100px !important; }
-  .photo-item.loading::after { height: 100px; }
-}
-
-/* ── PLACE LINKS ───────────────────────────────────────────────────── */
-a.wl {
-  color: inherit; text-decoration: none;
-  border-bottom: 1px dashed rgba(0,0,0,.25);
-  transition: border-color .15s;
-}
-a.wl:hover { border-color: var(--blue2); }
 </style>
 </head>
 <body>
+
+<!-- HERO -->
 <div class="hero">
-<div style="font-size:2.5rem;margin-bottom:12px">🏛️</div>
-<h1>Grécia — Junho 2026</h1>
-<p class="hero-sub">Três itinerários · Dia a dia · Orçamento revisto</p>
-<div class="hero-pills">
-<span class="hero-pill">📅 22–23 dias · Junho 2026</span>
-<span class="hero-pill">✈ Porto (OPO)</span>
-<span class="hero-pill">💶 Orçamento optimizado</span>
-<span class="hero-pill">⛺ Campismo pontual</span>
+  <div class="hero-flag">🏛️</div>
+  <h1 class="hero-title">Grécia — Filipe & Inês</h1>
+  <p class="hero-sub">Tessalónica ao sul · Ilhas · 26 dias</p>
+  <div class="hero-dates">📅 7 Junho → 2 Julho 2026</div>
+  <div class="hero-pills">
+    <span class="hero-pill">✈ Chegada Tessalónica · Partida Atenas</span>
+    <span class="hero-pill">🏔 Monte Olimpo + Meteora</span>
+    <span class="hero-pill">🔮 Delphi + Epidauro</span>
+    <span class="hero-pill">🤿 Snorkeling · Naxos + Milos</span>
+  </div>
 </div>
+
+<!-- TABS -->
+<div class="tabs">
+  <button class="tab active" onclick="switchTab('itin')">🗺 Itinerário</button>
+  <button class="tab" onclick="switchTab('leftout')">📦 Para outra vez</button>
 </div>
-<div class="nav">
-<button class="nav-btn a" onclick="show('a')">🏛️ A — Clássica Renovada</button>
-<button class="nav-btn b" onclick="show('b')">🎵 B — Norte + Esporades</button>
-<button class="nav-btn c" onclick="show('c')">🌿 C — Natureza + Comunidades</button>
-</div>
-<div class="nav-dots">
-<div class="dot a on" id="dot-a"></div>
-<div class="dot b" id="dot-b"></div>
-<div class="dot c" id="dot-c"></div>
-</div>
-<!-- ══════════════════════════ ITINERÁRIO A ══════════════════════════ -->
-<div class="itin on" id="a">
-<div class="itin-top a">
-<div class="itin-label">Itinerário A · 22 dias</div>
-<div class="itin-title">✦ Clássica Renovada</div>
-<div class="itin-sub">Atenas · Peloponeso · Naxos · Paros · <s style="opacity:.5">Santorini</s> Milos</div>
-<div class="itin-pills">
-<span class="itin-pill">🎭 Athens Epidaurus Festival</span>
-<span class="itin-pill">🌋 Milos em vez de Santorini</span>
-<span class="itin-pill">⛺ Campismo em Naxos e Milos</span>
-</div>
-</div>
+
+<!-- ══════════════ ITINERARY TAB ══════════════ -->
+<div class="tab-content active" id="itin">
+
+<!-- ROUTE RIBBON -->
 <div class="ribbon">
-<div class="ribbon-inner">
-<div class="rnode"><span class="rname a">Atenas</span><span class="rdays">5n</span></div><span class="rarrow">→</span>
-<div class="rnode"><span class="rname a">Nafplio</span><span class="rdays">3n</span></div><span class="rarrow">→</span>
-<div class="rnode"><span class="rname a">Epidauro</span><span class="rdays">dia</span></div><span class="rarrow">→</span>
-<div class="rnode"><span class="rname a">Monemvasia</span><span class="rdays">2n</span></div><span class="rarrow">→</span>
-<div class="rnode"><span class="rname a">Naxos</span><span class="rdays">4n</span></div><span class="rarrow">→</span>
-<div class="rnode"><span class="rname a">Paros</span><span class="rdays">2n</span></div><span class="rarrow">→</span>
-<div class="rnode"><span class="rname a">Milos</span><span class="rdays">4n</span></div>
+  <div class="ribbon-box">
+    <div class="rnode"><span class="rname t">Tessalónica</span><span class="rdays">3n</span></div><span class="rarrow">→</span>
+    <div class="rnode"><span class="rname n">Olimpo</span><span class="rdays">1–2n</span></div><span class="rarrow">→</span>
+    <div class="rnode"><span class="rname n">Meteora</span><span class="rdays">2n</span></div><span class="rarrow">→</span>
+    <div class="rnode"><span class="rname s opt">Alonnisos ⊕</span><span class="rdays">3n</span></div><span class="rarrow">→</span>
+    <div class="rnode"><span class="rname t">Delphi</span><span class="rdays">2n</span></div><span class="rarrow">→</span>
+    <div class="rnode"><span class="rname t">Nafplio</span><span class="rdays">2n</span></div><span class="rarrow">→</span>
+    <div class="rnode"><span class="rname t">Atenas</span><span class="rdays">5n</span></div><span class="rarrow">→</span>
+    <div class="rnode"><span class="rname s">Naxos</span><span class="rdays">4n</span></div><span class="rarrow">→</span>
+    <div class="rnode"><span class="rname n">Milos</span><span class="rdays">3–4n</span></div>
+  </div>
 </div>
-</div>
-<!-- VOOS A -->
-<div class="voos-wrap">
-<div class="voos-box">
-<div class="voos-head a"><span style="font-size:1.3rem">✈</span><span class="voos-head-text a">Voos — Porto ↔ Grécia</span></div>
-<table class="voos-table">
-<tr><th>Voo</th><th>Rota</th><th>Companhia</th><th style="text-align:right">Preço (2 pax)</th></tr>
-<tr><td>✈ Ida · Dia 1</td><td>Porto (OPO) → Atenas (ATH) directo · ~3h45m</td><td>Ryanair / Aegean</td><td class="price-a" style="text-align:right">€120–200</td></tr>
-<tr><td>✈ Regresso · Dia 22</td><td>Milos (MLO) → Atenas (ATH) + ATH → Porto (OPO)</td><td>Olympic + Ryanair</td><td class="price-a" style="text-align:right">€200–320</td></tr>
-<tr class="voos-total-row"><td colspan="3"><b>Total voos (2 pax)</b> — reservar já em Abril para melhor preço</td><td class="price-a" style="text-align:right">€320–520</td></tr>
-</table>
-<div class="voos-note">💡 Comparar em <b><a class="wl" href="https://www.skyscanner.pt" rel="noopener" target="_blank">skyscanner.pt</a></b> ou <b><a class="wl" href="https://www.google.com/flights" rel="noopener" target="_blank">google.com/flights</a></b>. Ryanair OPO→ATH opera directamente e é a opção mais barata (sem bagagem incluída). Milos→Atenas: voo interno ~25 min com Olympic Air (~€30–50 por pessoa) ou ferry lento Milos→Piraeus 7h (~€35–45 por pessoa, mais económico).</div>
-</div>
-</div>
-<div class="days-wrap">
-<div class="sec-head a">📅 Roteiro Dia a Dia</div>
-<!-- DIA 1 -->
-<div class="day-block">
-<div class="day-header a">
-<div>
-<div class="day-num">Dia 1</div>
-<div class="day-loc">✈ Viagem Porto → Atenas</div>
-</div>
-<div class="day-theme">Chegada + instalação</div>
-</div>
-<div class="day-body"><div class="photo-gallery n3" data-gallery="athens"><div class="photo-item loading"></div><div class="photo-item loading"></div><div class="photo-item loading"></div></div>
 
-<div class="day-section">
-<div class="day-section-title">🗓 O dia</div>
-<div class="day-items">
-<div class="day-item">Voo de manhã de OPO para ATH (~3h45m directo). Chegar ao fim da manhã.</div>
-<div class="day-item"><b>Metro do aeroporto</b> → centro: Linha Azul, estação Monastiraki ou Syntagma, ~40 min, €10.50/pessoa. Muito mais barato que táxi (€40–50).</div>
-<div class="day-item">Tarde: instalar, passeio suave pela Plaka e Monastiraki. Jantar num dos bares do bairro de Psirri (~€10–12/pessoa).</div>
+<!-- ALONNISOS OPTION -->
+<div class="option-banner">
+  <div class="option-row">
+    <div class="option-card a">
+      <h4>⊕ Opção A — Com Alonnisos (26 noites)</h4>
+      <p>Detour de 3 dias pelas Esporades depois de Meteora (via Volos, 2h). Parque Marinho, mergulho com foca-monge, ilhas selvagens. Recomendado se o snorkeling for prioridade da Inês — Alonnisos é ecologicamente único. Ilhas finais mais curtas: Naxos 3n + Milos 3n.</p>
+    </div>
+    <div class="option-card b">
+      <h4>⊘ Opção B — Sem Alonnisos (23 noites + 3 dias livres)</h4>
+      <p>Descanso e ritmo mais lento. Snorkeling excelente em Milos (Kleftiko, caves vulcânicas) e Naxos. Sobram 3 noites extra para distribuir: mais tempo em Olimpo (2n), Atenas (6n) ou Milos (4n). Logística mais simples.</p>
+    </div>
+  </div>
 </div>
-</div>
-<div class="sleep-box a">
-<div class="sleep-label a">🛏 Alojamento — Atenas (5 noites)</div>
-<a class="wl" href="https://www.citycircus.gr" rel="noopener" target="_blank"><b>City Circus Athens</b></a> ou similar — quarto privado duplo em hostel de design, bairro Monastiraki. Inclui café. Limpo, bem localizado, atmosfera jovem.
-          <br/><span class="sleep-price a">~€50–65/noite</span>
-</div>
-</div>
-</div>
-<!-- DIAS 2-5: ATENAS -->
-<div class="day-block">
-<div class="day-header a">
-<div>
-<div class="day-num">Dias 2–5</div>
-<div class="day-loc">🏛 Atenas</div>
-</div>
-<div class="day-theme">Acrópole · Museus · Exarchia · Release Athens</div>
-</div>
-<div class="day-body"><div class="photo-gallery n3" data-gallery="athens"><div class="photo-item loading"></div><div class="photo-item loading"></div><div class="photo-item loading"></div></div>
 
-<div class="day-section">
-<div class="day-section-title">🏛 O que ver (distribuir por 4 dias)</div>
-<div class="day-items">
-<div class="day-item"><a class="wl" href="https://www.theacropolismuseum.gr/en" rel="noopener" target="_blank"><b>Acrópole + Parténon</b></a> — chegar às 8h (abre), antes do calor e das multidões. Bilhete combinado €30 cobre 7 sítios (inclui Ágora Antiga). Comprar online com antecedência.</div>
-<div class="day-item"><a class="wl" href="https://www.theacropolismuseum.gr/en" rel="noopener" target="_blank"><b>Museu da Acrópole</b></a> — as cariátides originais, frisos do Parténon. Aberto até às 20h. Bilhete €10 (incluído no combinado).</div>
-<div class="day-item"><a class="wl" href="https://www.namuseum.gr/en/" rel="noopener" target="_blank"><b>Museu Nacional de Arqueologia</b></a> — Máscara de Agamémnon, estátua de Poseidão em bronze, frescos minoicos de Santorini (relevante antes de Milos!). ~3h. Bilhete €12.</div>
-<div class="day-item"><a class="wl" href="https://en.wikipedia.org/wiki/Exarchia" rel="noopener" target="_blank"><b>Exarchia</b></a> (noite) — o bairro alternativo de Atenas: murais políticos, colectivos, tabernas de bairro. Jantar no Telis (souvlaki mítico, €4/pessoa). A Atenas real.</div>
-<div class="day-item"><a class="wl" href="https://en.wikipedia.org/wiki/Anafiotika" rel="noopener" target="_blank"><b>Anafiotika</b></a> — mini-aldeia cíclada construída no coração da Plaka, sob a Acrópole. Visitar de manhã cedo. Gratuito, 10 min a pé de qualquer ponto da Plaka.</div>
-</div>
-</div>
-<div class="day-section">
-<div class="day-section-title">🎸 Festival</div>
-<div class="fest-box">
-<div class="fest-name">Release Athens Festival 2026</div>
-<div class="fest-date">21 Junho – 26 Julho · Plateia Nerou, Atenas</div>
-<div class="fest-desc">Se os dias em Atenas coincidirem com o início do festival: <b>David Byrne</b> (21 jun), <b>Nick Cave &amp; The Bad Seeds</b> (24 jun), <b>Gorillaz</b> (25 jun). Verificar datas exactas — comprar bilhetes para 1–2 concertos se coincidir.</div>
-<a class="fest-link" href="https://www.releaseathens.gr/en/lineup/" target="_blank">→ releaseathens.gr — lineup completo</a>
-</div>
-</div>
-<div class="day-section">
-<div class="day-section-title">🚌 Transportes internos</div>
-<div class="day-items">
-<div class="day-item">Metro cobre tudo — bilhete diário €4.50 ou unitário €1.40. Evitar táxis.</div>
-<div class="day-item">Temperatura 28–35°C: monumentos de manhã (8–11h), descanso de tarde, saídas nocturnas.</div>
-</div>
-</div>
-</div>
-</div>
-<!-- DIAS 6-8: NAFPLIO -->
-<div class="day-block">
-<div class="day-header a">
-<div>
-<div class="day-num">Dias 6–8</div>
-<div class="day-loc">🏰 Nafplio</div>
-</div>
-<div class="day-theme">Primeira capital · Castelo · Micenas</div>
-</div>
-<div class="day-body"><div class="photo-gallery n3" data-gallery="nafplio"><div class="photo-item loading"></div><div class="photo-item loading"></div><div class="photo-item loading"></div></div>
+<!-- ── TESSALÓNICA ── -->
+<div class="sec-head"><h2>🏛 Descida Continental</h2></div>
 
-<div class="transport-row">
-<span class="transport-icon">🚌</span>
-<span><b>Atenas → Nafplio:</b> autocarro KTEL do Terminal B de Liosíon (metro linha verde, estação Attiki). Directo, ~2h15m, €15/pessoa. Saídas de hora a hora. Sem carro necessário.</span>
+<div class="stop-wrap">
+<div class="stop">
+  <div class="stop-header th">
+    <div class="stop-meta">
+      <div class="stop-num">Dias 1–3 · 7–9 Junho</div>
+      <div class="stop-name">Tessalónica</div>
+      <div class="stop-theme">Bizântino · Rebetiko · A melhor cidade da Grécia</div>
+    </div>
+    <div class="stop-nights">3 noites</div>
+  </div>
+  <div class="photo-gallery n3" data-gallery="thessaloniki">
+    <div class="photo-item loading"></div><div class="photo-item loading"></div><div class="photo-item loading"></div>
+  </div>
+  <div class="transport">
+    <span class="transport-icon">✈</span>
+    <span><b>Chegada:</b> Aeroporto Makedonia (SKG) → centro: taxi ~€15 ou bus X13 €2. Hotel a 15–20 min.</span>
+  </div>
+  <div class="stop-section">
+    <div class="section-label">🗺 O que fazer</div>
+    <div class="items">
+      <div class="item"><a class="wl" href="https://whc.unesco.org/en/list/456" target="_blank"><b>Igrejas Bizântinas UNESCO</b></a> — <a class="wl" href="https://en.wikipedia.org/wiki/Church_of_Saint_Demetrius" target="_blank"><b>Agios Dimitrios</b></a> (maior basílica paleocristã da Grécia, séc. IV), <a class="wl" href="https://en.wikipedia.org/wiki/Rotunda_of_Galerius" target="_blank"><b>Rotunda</b></a> (mausoléu romano convertido). Mapa gratuito nos museus.</div>
+      <div class="item"><a class="wl" href="https://amth.gr/en" target="_blank"><b>Museu Arqueológico</b></a> — tesouros macedónios de Vergina, peças do túmulo de Filipe II (pai de Alexandre). Bilhete €10. Manhã de dia 2.</div>
+      <div class="item"><a class="wl" href="https://en.wikipedia.org/wiki/Modiano_Market" target="_blank"><b>Mercado Modiano</b></a> — coberto, histórico. Especiarias, peixe, queijo. Almoços de tabuleiro €5–7. A vida de bairro.</div>
+      <div class="item"><a class="wl" href="https://en.wikipedia.org/wiki/Ladadika" target="_blank"><b>Ladadika e Valaoritou</b></a> (noites) — rebetiko ao vivo em tabernas, bougatsa ao pequeno-almoço (€2.50), bares de jazz. A melhor vida nocturna da Grécia fora de Atenas.</div>
+      <div class="item"><a class="wl" href="https://en.wikipedia.org/wiki/White_Tower_of_Thessaloniki" target="_blank"><b>Torre Branca e frente de mar</b></a> — passear ao entardecer, cerveja local, vista para o Golfo Termaico.</div>
+    </div>
+  </div>
+  <div class="fest-wrap">
+    <div class="fest-box">
+      <div class="fest-name">🎵 Cena musical de Tessalónica</div>
+      <div class="fest-status watch">verificar</div>
+      <div class="fest-desc"><b>outHEAR New Music Week</b> (música contemporânea experimental, Klangforum Wien) decorreu em Abril 2026 — já passou. <b>Reworks festival</b> (electrónica experimental, top 10 mundial RA) é em Setembro — fora das datas.<br>Mas Tessalónica tem cena viva: verificar <a class="fest-link" href="https://monilazeriston.gr" target="_blank">Moni Lazariston</a> para programação de junho, e a sala <a class="fest-link" href="https://en.wikipedia.org/wiki/Thessaloniki_Concert_Hall" target="_blank">Thessaloniki Concert Hall (Megaron)</a> para concertos avulso.</div>
+    </div>
+  </div>
+  <div class="sleep-box th">
+    <div class="sleep-label th">🛏 Alojamento — Tessalónica (3 noites)</div>
+    <div class="sleep-option"><b>Studio/Airbnb em Ladadika ou Ano Poli</b> (cidade alta) — mais autêntico e barato que centro turístico. Cozinha incluída para poupar.</div>
+    <div class="sleep-option">Alternativa hotel: <a class="wl" href="https://www.booking.com/searchresults.en.html?ss=Thessaloniki+Ladadika" target="_blank"><b>Colors Urban Hotel</b></a> ou similares em Ladadika — central, bem avaliado.</div>
+    <div style="margin-top:8px"><span class="sleep-badge sb-blue">🏠 Studio ~€45–65/noite</span></div>
+  </div>
 </div>
-<div class="day-section">
-<div class="day-section-title">🗺 O que fazer</div>
-<div class="day-items">
-<div class="day-item"><a class="wl" href="https://en.wikipedia.org/wiki/Palamidi" rel="noopener" target="_blank"><b>Castelo de Palamidi</b></a> — subir os 999 degraus a pé de manhã cedo (1h, levam água). Vista 360° sobre o Golfo Argólico. Bilhete €8. Coucher do sol daqui.</div>
-<div class="day-item"><a class="wl" href="https://whc.unesco.org/en/list/941" rel="noopener" target="_blank"><b>Micenas</b></a> (excursão, dia 7) — autocarro local ~30 min, €3/pessoa. Porta dos Leões, Túmulo de Agamémnon, cidadela murada. Bilhete €12. Base do mito do Rei dos Reis.</div>
-<div class="day-item"><b>Cidade Velha veneziana</b> — ruas de pedra, pequenas lojas de artesanato, cafés no porto. Passeio noturno com as fortalezas iluminadas.</div>
-<div class="day-item"><b>Promenade Arvanitia</b> — trilho costeiro de 2 km com vistas para o mar e o Bourtzi. Gratuito. Ao fim da tarde para fugir ao calor.</div>
 </div>
-</div>
-<div class="sleep-box a">
-<div class="sleep-label a">🛏 Alojamento — Nafplio (3 noites)</div>
-<a class="wl" href="https://www.booking.com/searchresults.en.html?ss=Nafplio" rel="noopener" target="_blank"><b>Pension Dafni</b></a> ou <a class="wl" href="https://www.booking.com/hotel/gr/amymone.en.html" rel="noopener" target="_blank"><b>Amymone Guesthouse</b></a> — quartos simples com charme na cidade velha, pedra e madeira.
-          <br/><span class="sleep-price a">~€55–75/noite</span>
-</div>
-</div>
-</div>
-<!-- DIA 9: EPIDAURO -->
-<div class="day-block">
-<div class="day-header a">
-<div>
-<div class="day-num">Dia 9</div>
-<div class="day-loc">🎭 Epidauro</div>
-</div>
-<div class="day-theme">Teatro antigo · Festival · Noite histórica</div>
-</div>
-<div class="day-body"><div class="photo-gallery n2" data-gallery="epidaurus"><div class="photo-item loading"></div><div class="photo-item loading"></div></div>
 
-<div class="transport-row">
-<span class="transport-icon">🚌</span>
-<span><b>Nafplio → Epidauro:</b> autocarro KTEL ~45 min, ~€4/pessoa (2–3 por dia). Ou táxi ida e volta para o casal ~€40. Em dia de festival, táxis abundam.</span>
+<!-- ── MONTE OLIMPO ── -->
+<div class="stop-wrap">
+<div class="stop">
+  <div class="stop-header ol">
+    <div class="stop-meta">
+      <div class="stop-num">Dias 4–5 · 10–11 Junho</div>
+      <div class="stop-name">Monte Olimpo · Litochoro</div>
+      <div class="stop-theme">Casa dos Deuses · Garganta de Enipeas · Trekking mítico</div>
+    </div>
+    <div class="stop-nights">1–2 noites</div>
+  </div>
+  <div class="photo-gallery n3" data-gallery="olympus">
+    <div class="photo-item loading"></div><div class="photo-item loading"></div><div class="photo-item loading"></div>
+  </div>
+  <div class="transport">
+    <span class="transport-icon">🚌</span>
+    <span><b>Tessalónica → Litochoro:</b> KTEL directo ~1h15m, €8.50/pessoa. Saídas de hora a hora da estação KTEL Macedonia. Litochoro fica a 90km.</span>
+  </div>
+  <div class="stop-section">
+    <div class="section-label">🗺 O que fazer</div>
+    <div class="items">
+      <div class="item"><b>Garganta de Enipeas</b> (1 noite: o caminho) — trilho E4, 5h a pé de Litochoro ao longo do rio. Pontes de madeira, cascatas, pinheiros negros, mosteiro de Agios Dionysios. Não precisa de equipamento técnico. Nível médio. O mais bonito sem subir ao cimo.</div>
+      <div class="item"><b>Cimo — Mytikas 2917m</b> (2 noites: a aventura) — dia 1: subir a Prionia (táxi €15) e caminhar 3h até ao refúgio <a class="wl" href="https://en.wikipedia.org/wiki/Mount_Olympus" target="_blank"><b>Spilios Agapitos</b></a> a 2100m (dormir no refúgio, €18–22/pessoa). Dia 2: cimo de manhã e descida. O último trecho (Skala→Mytikas) é escalada Classe III — opcional ficar no Skolio 2912m, panorama igual sem técnica.</div>
+      <div class="item"><b>Dion Arqueológico</b> (bónus, 30 min de carro) — cidade sagrada de Alexandre Magno aos pés do Olimpo. Templos, mosaicos, teatro romano. Bilhete €8.</div>
+    </div>
+  </div>
+  <div class="tip">⚡ <b>Em junho o Olimpo está perfeito:</b> neve derretida nos trilhos, temperaturas amenas, luz longa. Levar calçado de trekking e camisola — a temperatura no refúgio a 2100m cai muito à noite.</div>
+  <div class="sleep-box ol">
+    <div class="sleep-label ol">🛏 Alojamento — Litochoro (1–2 noites)</div>
+    <div class="sleep-option"><a class="wl" href="https://www.booking.com/hotel/gr/riverbed-traditional-guest-house.en.html" target="_blank"><b>RiverBed Traditional Guest House</b></a> — mesmo ao pé do rio Enipeas onde os trilhos começam. Familiar, pequeno-almoço excelente, muito bem avaliado por hikers. Guarda a bagagem durante a subida.</div>
+    <div class="sleep-option"><a class="wl" href="https://www.booking.com/hotel/gr/guesthouse-papanikolaou.en.html" target="_blank"><b>Guesthouse Papanikolaou</b></a> — central, cozinha própria, estacionamento gratuito. Relação qualidade-preço sólida.</div>
+    <div class="sleep-option"><b>Refúgio Spilios Agapitos (2100m)</b> — dormitório, inclui jantar e pequeno-almoço, reservar com antecedência em <a class="wl" href="https://www.mountolympus.gr" target="_blank">mountolympus.gr</a>.</div>
+    <div style="margin-top:8px">
+      <span class="sleep-badge sb-olive">🏡 Guesthouse ~€48–65/noite</span>
+      <span class="sleep-badge sb-camp" style="margin-left:6px">⛺ Refúgio ~€18–22/cama</span>
+    </div>
+  </div>
 </div>
-<div class="day-section">
-<div class="day-section-title">🎭 O dia</div>
-<div class="day-items">
-<div class="day-item"><a class="wl" href="https://whc.unesco.org/en/list/491" rel="noopener" target="_blank"><b>Sítio arqueológico de Epidauro</b></a> — visitar de manhã com luz diurna. Teatro de 14.000 lugares, acústica impossível (testar: moeda no centro, ouvir no topo). Bilhete €12.</div>
-<div class="day-item"><a class="wl" href="https://aefestival.gr/schedule/?lang=en" rel="noopener" target="_blank"><b>Athens Epidaurus Festival 2026</b></a> — abre a <b>20 de junho</b> com <i>Medea</i> de Luigi Cherubini pela Ópera Nacional Grega, 65 anos após Maria Callas. Espectáculo de noite: estrelas, oliveiras, 2.500 anos de história. Bilhetes €25–65/pessoa.</div>
-<div class="day-item">Levar camisola — a noite em Epidauro refresca muito. Regressar a Nafplio de táxi após o espectáculo.</div>
 </div>
-</div>
-<div class="tip-box">🌟 <b>Momento único:</b> Ver ópera no teatro mais antigo do mundo de noite é uma das experiências mais arrepiantes que existem. Reservar bilhetes em <a href="https://aefestival.gr/schedule/?lang=en" style="color:var(--gold)" target="_blank">aefestival.gr</a> assim que o programa 2026 estiver disponível.
-        </div>
-</div>
-</div>
-<!-- DIAS 10-11: MONEMVASIA -->
-<div class="day-block">
-<div class="day-header a">
-<div>
-<div class="day-num">Dias 10–11</div>
-<div class="day-loc">🏯 Monemvasia</div>
-</div>
-<div class="day-theme">Cidade fortaleza medieval · Pôr do sol</div>
-</div>
-<div class="day-body"><div class="photo-gallery n2" data-gallery="monemvasia"><div class="photo-item loading"></div><div class="photo-item loading"></div></div>
 
-<div class="transport-row">
-<span class="transport-icon">🚌</span>
-<span><b>Nafplio → Monemvasia:</b> autocarro KTEL (1x/dia) ~3h, €20/pessoa. Ou bus Nafplio → Sparta + Sparta → Monemvasia (verificar horários).</span>
+<!-- ── METEORA ── -->
+<div class="stop-wrap">
+<div class="stop">
+  <div class="stop-header me">
+    <div class="stop-meta">
+      <div class="stop-num">Dias 5–7 · 11–13 Junho</div>
+      <div class="stop-name">Meteora · Kalambaka</div>
+      <div class="stop-theme">Mosteiros nas rochas · Uma das paisagens mais surreais da Europa</div>
+    </div>
+    <div class="stop-nights">2 noites</div>
+  </div>
+  <div class="photo-gallery n3" data-gallery="meteora">
+    <div class="photo-item loading"></div><div class="photo-item loading"></div><div class="photo-item loading"></div>
+  </div>
+  <div class="transport">
+    <span class="transport-icon">🚌</span>
+    <span><b>Litochoro → Kalambaka:</b> bus para Larissa (~1h15m) + bus para Kalambaka (~1h30m), €18/pessoa total. Ou carro de Litochoro directo em 1h45m pela E75.</span>
+  </div>
+  <div class="stop-section">
+    <div class="section-label">🗺 O que fazer</div>
+    <div class="items">
+      <div class="item"><a class="wl" href="https://whc.unesco.org/en/list/455" target="_blank"><b>Mosteiros UNESCO</b></a> (dia 6) — 6 mosteiros activos suspensos em pilares de rocha. Os melhores: <a class="wl" href="https://en.wikipedia.org/wiki/Great_Meteoron" target="_blank"><b>Grande Meteoron</b></a>, <a class="wl" href="https://en.wikipedia.org/wiki/Varlaam_monastery" target="_blank"><b>Varlaam</b></a>, Roussanou. Vestuário coberto obrigatório. Bilhete €3–5 cada.</div>
+      <div class="item"><b>Trilho a pé entre mosteiros</b> (dia 7, manhã) — 8km, nível médio, 3h. Arrancar às 7h30 — os autocarros turísticos chegam depois das 9h. Panoramas a cada curva.</div>
+      <div class="item"><b>Miradouro de Doupiani + pôr-do-sol</b> — gratuito, à saída de Kalambaka. Pilhas de rocha douradas à luz rasante. Chegar 1h antes.</div>
+      <div class="item"><b>Kastraki</b> — aldeia adjacente, mais tranquila e barata que Kalambaka town. Jantar em tabernas familiares com vista directa para as rochas.</div>
+    </div>
+  </div>
+  <div class="tip">🌅 <b>Dica:</b> Acordar às 6h e subir a pé antes dos autocarros — Meteora com névoa matinal nos vales e luz dourada é uma das experiências mais espantosas da Grécia.</div>
+  <div class="sleep-box me">
+    <div class="sleep-label me">🛏 Alojamento — Kalambaka / Kastraki (2 noites)</div>
+    <div class="sleep-option"><a class="wl" href="https://www.booking.com/searchresults.en.html?ss=Kastraki+Meteora" target="_blank"><b>Guesthouses em Kastraki</b></a> — mais barato e autêntico que Kalambaka. Vista directa para os penhascos da varanda. Procurar em Booking por "Kastraki".</div>
+    <div class="sleep-option"><b>Ziogas Rooms</b> ou <b>Archontiko Meteora</b> — clássicos bem avaliados, ~€40–55/noite.</div>
+    <div style="margin-top:8px"><span class="sleep-badge sb-purple">🏡 Guesthouse ~€42–58/noite</span></div>
+  </div>
 </div>
-<div class="day-section">
-<div class="day-section-title">🗺 O que fazer</div>
-<div class="day-items">
-<div class="day-item"><a class="wl" href="https://en.wikipedia.org/wiki/Monemvasia" rel="noopener" target="_blank"><b>Cidade Velha dentro das muralhas</b></a> — meio-dia a explorar vielas medievais, igrejas do século XII, casas de pedra. Sem carros. Entrar pela única porta existente.</div>
-<div class="day-item"><b>Cidadela Superior</b> — 30 min de subida por escadas irregulares. Ruínas medievais, vista de 360° para o mar Egeu. Ao fim do dia.</div>
-<div class="day-item"><b>Praia de Punta</b> — pequena, sossegada, 10 min a pé. Água fria e cristalina.</div>
 </div>
-</div>
-<div class="sleep-box a">
-<div class="sleep-label a">🛏 Alojamento — Monemvasia (2 noites)</div>
-<b>Gefyra</b> (aldeia fora das muralhas) — mais barato, 10 min a pé da entrada da cidade medieval. Evitar hotéis dentro das muralhas (€100–150/noite). Guesthouses em Gefyra: ambiente local, muito mais acessível.
-          <br/><span class="sleep-price a">~€45–60/noite</span>
-</div>
-</div>
-</div>
-<!-- DIAS 12-15: NAXOS -->
-<div class="day-block">
-<div class="day-header a">
-<div>
-<div class="day-num">Dias 12–15</div>
-<div class="day-loc">🌊 Naxos</div>
-</div>
-<div class="day-theme">Maior Cíclada · Maragas · Interior de montanha</div>
-</div>
-<div class="day-body"><div class="photo-gallery n3" data-gallery="naxos"><div class="photo-item loading"></div><div class="photo-item loading"></div><div class="photo-item loading"></div></div>
 
-<div class="transport-row">
-<span class="transport-icon">⛴</span>
-<span><b>Monemvasia → Naxos:</b> autocarro até Piraeus (via Sparta, ~4h, €25/pessoa) + ferry Blue Star Piraeus → Naxos (~5h30m, €35/pessoa). Reservar em <b><a class="wl" href="https://www.ferries.gr" rel="noopener" target="_blank">ferries.gr</a></b>. Ferry mais lento mas muito mais barato que SeaJets.</span>
+<!-- ── ALONNISOS (OPÇÃO A) ── -->
+<div class="stop-wrap">
+<div class="stop">
+  <div class="stop-header al">
+    <div class="stop-meta">
+      <div class="stop-num">Dias 7–10 · 13–16 Junho</div>
+      <div class="stop-name">🐟 Alonnisos · Parque Marinho</div>
+      <div class="stop-theme">Opção A · Marine Park · Snorkeling · Ilha não-turística</div>
+    </div>
+    <div class="stop-nights" style="background:rgba(255,255,255,.15)">⊕ Opção A · 3 noites</div>
+  </div>
+  <div style="padding:8px 12px"><span class="opt-tag a">⊕ Opção A — acrescenta 3 dias e ~€200 ao total</span></div>
+  <div class="photo-gallery n2" data-gallery="alonnisos">
+    <div class="photo-item loading"></div><div class="photo-item loading"></div>
+  </div>
+  <div class="transport">
+    <span class="transport-icon">⛴</span>
+    <span><b>Kalambaka → Volos:</b> bus ~2h, €10/pessoa. <b>Volos → Alonnisos:</b> ferry Flying Dolphin ou Blue Star ~3–4h, €20–30/pessoa. Reservar em <a class="wl" href="https://www.ferries.gr" target="_blank">ferries.gr</a>.</span>
+  </div>
+  <div class="stop-section">
+    <div class="section-label">🐟 O que fazer</div>
+    <div class="items">
+      <div class="item"><a class="wl" href="https://en.wikipedia.org/wiki/National_Marine_Park_of_Alonnisos_Northern_Sporades" target="_blank"><b>Parque Marinho Nacional</b></a> — o maior parque marinho da Europa. Snorkeling: enguias moray, garoupas gigantes, polvos, jardins de gorgonianos. Praia de <b>Megalos Mourtias</b> (oeste da ilha) — a melhor para snorkeling de praia. Excursão de barco ao parque ~€25/pessoa.</div>
+      <div class="item"><b>Naufrágios históricos</b> — a área tem a segunda maior concentração de naufrágios antigos do mundo, do séc. V a.C. O mais famoso é o navio clássico de Peristera, acessível em mergulho guiado.</div>
+      <div class="item"><a class="wl" href="https://en.wikipedia.org/wiki/Alonnisos" target="_blank"><b>Chora Velha</b></a> (aldeia restaurada no topo do morro) — muito menos turística que Skiathos ou Skopelos. Preços 20–30% mais baixos. Vistas para o mar.</div>
+      <div class="item">Aluguer de kayak (~€15/dia) para explorar praias desertas. Hipótese de ver golfinhos e foca-monge mediterrânica (rara).</div>
+    </div>
+  </div>
+  <div class="sleep-box al">
+    <div class="sleep-label al">🛏 Alojamento — Alonnisos (3 noites)</div>
+    <div class="sleep-option">Studios simples em <b>Patitiri</b> (porto) ou na <b>Chora Velha</b>. Procurar em Booking ou Airbnb — muito mais barato que ilhas mais turísticas.</div>
+    <div style="margin-top:8px"><span class="sleep-badge sb-teal">🏠 Studio ~€38–52/noite</span></div>
+  </div>
 </div>
-<div class="day-section">
-<div class="day-section-title">🗺 O que fazer</div>
-<div class="day-items">
-<div class="day-item"><a class="wl" href="https://en.wikipedia.org/wiki/Agia_Anna,_Naxos" rel="noopener" target="_blank"><b>Maragas Beach</b></a> (dias 13–14) — 10 km de areia dourada, dunas, água turquesa. Uma das melhores praias das Cíclades. O campsite fica mesmo aqui.</div>
-<div class="day-item"><b>Interior da ilha</b> (dia 15) — aldeias de Chalki e Apeiranthos. Queijo graviera local comprado directamente a produtores. Autocarro local ~€3 ou bicicleta.</div>
-<div class="day-item"><a class="wl" href="https://en.wikipedia.org/wiki/Portara_(Naxos)" rel="noopener" target="_blank"><b>Portara ao pôr-do-sol</b></a> — ruína do Templo de Apolo à entrada do porto, 6 metros de mármore contra o sol. Gratuito.</div>
 </div>
-</div>
-<div class="sleep-box a">
-<div class="sleep-label a">🛏 Alojamento — Naxos (4 noites)</div>
-<b>2 noites camping:</b> <a class="wl" href="https://www.campingmaragas.gr" rel="noopener" target="_blank"><b>Camping Maragas</b></a> — mesmo na praia de Maragas. Bungalows para dois (sem tenda própria necessária): cama, luz, WC. Duches e cozinha comunitária. <span class="camp-tag">⛺ CAMPING</span>
-<br/><b>2 noites studio:</b> Studio simples com cozinha em Naxos Town (~€50–65/noite).
-          <br/><span class="sleep-price camp">⛺ Bungalow ~€30–40/noite</span> <span class="sleep-price a">🏠 Studio ~€55–65/noite</span>
-</div>
-<div class="tip-box">💡 <b>Tenda ou bungalow?</b> Comprar uma tenda básica de 2 pessoas (Decathlon Quechua 2 Seconds, ~€70) amortiza em 3 noites vs bungalow. Se fizerem campismo em Naxos + Milos + Creta, poupam ~€120–150 no total e têm mais flexibilidade.</div>
-</div>
-</div>
-<!-- DIAS 16-17: PAROS -->
-<div class="day-block">
-<div class="day-header a">
-<div>
-<div class="day-num">Dias 16–17</div>
-<div class="day-loc">⛪ Paros</div>
-</div>
-<div class="day-theme">Naoussa · Igreja das Cem Portas · Mármore</div>
-</div>
-<div class="day-body"><div class="photo-gallery n3" data-gallery="paros"><div class="photo-item loading"></div><div class="photo-item loading"></div><div class="photo-item loading"></div></div>
 
-<div class="transport-row">
-<span class="transport-icon">⛴</span>
-<span><b>Naxos → Paros:</b> ferry local ~45 min, ~€12/pessoa. Várias partidas por dia.</span>
+<!-- ── DELPHI ── -->
+<div class="stop-wrap">
+<div class="stop">
+  <div class="stop-header de">
+    <div class="stop-meta">
+      <div class="stop-num">Dias 10–12 · 16–18 Junho (A) · ou 13–15 Junho (B)</div>
+      <div class="stop-name">Delphi · O Umbigo do Mundo</div>
+      <div class="stop-theme">Oráculo de Apolo · Auriga de Bronze · Vale de oliveiras</div>
+    </div>
+    <div class="stop-nights">2 noites</div>
+  </div>
+  <div class="photo-gallery n3" data-gallery="delphi">
+    <div class="photo-item loading"></div><div class="photo-item loading"></div><div class="photo-item loading"></div>
+  </div>
+  <div class="transport">
+    <span class="transport-icon">🚌</span>
+    <span><b>Opção A:</b> Alonnisos → Agios Konstantinos (ferry) + autocarro KTEL → Atenas + KTEL Terminal B → Delphi. Dia longo. <b>Opção B:</b> Kalambaka → Lamia + Lamia → Delphi, ~4h, €18/pessoa.</span>
+  </div>
+  <div class="stop-section">
+    <div class="section-label">🗺 O que fazer</div>
+    <div class="items">
+      <div class="item"><a class="wl" href="https://whc.unesco.org/en/list/393" target="_blank"><b>Sítio arqueológico</b></a> (manhã cedo, dia 1) — Templo de Apolo, Tesouro dos Atenienses, Estádio, Via Sacra. Chegar às 8h — luz dourada, quase ninguém. Bilhete €12 (inclui museu).</div>
+      <div class="item"><a class="wl" href="https://odysseus.culture.gr/h/1/eh151.jsp?obj_id=3316" target="_blank"><b>Museu de Delphi</b></a> (tarde, dia 1) — o <b>Auriga de Bronze</b> (séc. V a.C.) é uma das esculturas mais perfeitas que sobreviveram da Antiguidade. A Esfinge dos Naxianos. 2h mínimo.</div>
+      <div class="item"><a class="wl" href="https://en.wikipedia.org/wiki/Galaxidi" target="_blank"><b>Galaxidi</b></a> (excursão, dia 2) — aldeinha de pescadores a 30 min, junto ao Golfo de Corinto. Banho de mar, peixe grelhado fresco. Autocarro local.</div>
+      <div class="item"><b>Pôr-do-sol sobre o vale</b> — de Delphi, o vale de oliveiras desce 10km até ao golfo. Com luz rasante, uma das vistas mais bonitas do interior grego.</div>
+    </div>
+  </div>
+  <div class="sleep-box de">
+    <div class="sleep-label de">🛏 Alojamento — Delphi (2 noites)</div>
+    <div class="sleep-option"><a class="wl" href="https://www.booking.com/searchresults.en.html?ss=Delphi+guesthouse" target="_blank"><b>Hotel Acropole</b></a> ou <b>Sibyllla Hotel</b> — pensões familiares clássicas de Delphi, varandas com vista para o vale de Amfissa, bem avaliadas há décadas. Preço honesto.</div>
+    <div style="margin-top:8px"><span class="sleep-badge sb-gold">🏡 Pensão ~€42–58/noite</span></div>
+  </div>
 </div>
-<div class="day-section">
-<div class="day-section-title">🗺 O que fazer (2 noites focadas)</div>
-<div class="day-items">
-<div class="day-item"><a class="wl" href="https://en.wikipedia.org/wiki/Panagia_Ekatontapiliani" rel="noopener" target="_blank"><b>Panagia Ekatontapiliani</b></a> — uma das igrejas cristãs mais antigas do mundo (séculos IV–VII). Arquitectura bizântina complexa. Gratuito.</div>
-<div class="day-item"><a class="wl" href="https://en.wikipedia.org/wiki/Naoussa,_Paros" rel="noopener" target="_blank"><b>Naoussa</b></a> (dia 17) — porto de pescadores, piscinas naturais de Santa Maria, windsurf. A parte mais bonita de Paros. Autocarro local.</div>
-<div class="day-item"><b>Trilho da Levada</b> — 10 km pelo interior da ilha, moinhos, igrejas antigas. Nível fácil. De manhã cedo.</div>
 </div>
-</div>
-<div class="sleep-box a">
-<div class="sleep-label a">🛏 Alojamento — Paros (2 noites)</div>
-          Studios simples em Parikia afastados do porto (mais silencioso e barato). Cozinha incluída para poupar na alimentação.
-          <br/><span class="sleep-price a">~€50–65/noite</span>
-</div>
-</div>
-</div>
-<!-- DIAS 18-22: MILOS -->
-<div class="day-block">
-<div class="day-header a">
-<div>
-<div class="day-num">Dias 18–22</div>
-<div class="day-loc">🌋 Milos</div>
-</div>
-<div class="day-theme">Ilha vulcânica · Sarakiniko · Kleftiko · Em vez de Santorini</div>
-</div>
-<div class="day-body"><div class="photo-gallery n3" data-gallery="milos"><div class="photo-item loading"></div><div class="photo-item loading"></div><div class="photo-item loading"></div></div>
 
-<div class="transport-row">
-<span class="transport-icon">⛴</span>
-<span><b>Paros → Milos:</b> ferry directo, ~2h, ~€18–25/pessoa (Blue Star). Ou via Piraeus se não houver ligação directa no dia — verificar em <a class="wl" href="https://www.ferries.gr" rel="noopener" target="_blank">ferries.gr</a>.</span>
+<!-- ── NAFPLIO ── -->
+<div class="stop-wrap">
+<div class="stop">
+  <div class="stop-header na">
+    <div class="stop-meta">
+      <div class="stop-num">Dias 12–14 · 18–20 Junho</div>
+      <div class="stop-name">Nafplio · Micenas · Epidauro</div>
+      <div class="stop-theme">Primeira capital · Portos venezianos · Teatro do mundo</div>
+    </div>
+    <div class="stop-nights">2 noites</div>
+  </div>
+  <div class="photo-gallery n3" data-gallery="nafplio">
+    <div class="photo-item loading"></div><div class="photo-item loading"></div><div class="photo-item loading"></div>
+  </div>
+  <div class="transport">
+    <span class="transport-icon">🚌</span>
+    <span><b>Delphi → Nafplio:</b> autocarro KTEL via Corinto ou Atenas, ~3h30m total, ~€20/pessoa. Alternativa: Delphi → Atenas (KTEL, 3h) + Atenas → Nafplio (KTEL, 2h15m). Verificar horários em ktel.com.</span>
+  </div>
+  <div class="stop-section">
+    <div class="section-label">🗺 O que fazer</div>
+    <div class="items">
+      <div class="item"><a class="wl" href="https://en.wikipedia.org/wiki/Palamidi" target="_blank"><b>Castelo de Palamidi</b></a> — subir os 999 degraus de manhã cedo (1h). Vista 360° sobre o Golfo Argólico. Bilhete €8. Pôr-do-sol cá em cima.</div>
+      <div class="item"><a class="wl" href="https://whc.unesco.org/en/list/941" target="_blank"><b>Micenas</b></a> (excursão dia 2) — autocarro local ~30min, €3. Porta dos Leões, Túmulo de Agamémnon, cidadela murada. Bilhete €12. A origem do mito grego.</div>
+      <div class="item"><a class="wl" href="https://whc.unesco.org/en/list/491" target="_blank"><b>Sítio arqueológico de Epidauro</b></a> (excursão dia 2) — teatro de 14.000 lugares com acústica impossível (testar: moeda no centro do palco, ouvir do topo). Visitar de manhã, luz diurna. Bilhete €12. Em 2026 a única peça durante as vossas datas é a Medeia (ópera, 20 Jun) — mesmo sem espetáculo, o sítio é extraordinário.</div>
+      <div class="item"><b>Cidade velha veneziana</b> de Nafplio — ruas de pedra, cafés no porto, o Bourtzi iluminado à noite.</div>
+    </div>
+  </div>
+  <div class="fest-wrap">
+    <div class="fest-box">
+      <div class="fest-name">🎭 Athens Epidaurus Festival 2026 — Programa de Epidauro</div>
+      <div class="fest-status watch">monitorizar</div>
+      <div class="fest-desc">
+        O único espetáculo confirmado nas vossas datas no grande teatro é a <b>Medeia</b> (ópera, 20 Jun) — não é o vosso género.<br>
+        As peças que provavelmente vos interessariam começam a <b>3 Julho</b> (Os Persas de Ésquilo — teatro político com música ao vivo e 25 actores), <b>17 Jul</b> (Alceste de Eurípides — experimento teatral com som, movimento e acrobacia). Ficam fora das vossas datas.<br>
+        Mas o <b>Pequeno Teatro de Epidauro</b> tem programa separado e mais experimental — ainda não anunciado para Junho. Verificar em <a class="fest-link" href="https://aefestival.gr/schedule/?lang=en" target="_blank">aefestival.gr</a>.
+      </div>
+    </div>
+  </div>
+  <div class="sleep-box na">
+    <div class="sleep-label na">🛏 Alojamento — Nafplio (2 noites)</div>
+    <div class="sleep-option"><b>Gefyra</b> (aldeia adjacente às muralhas, 5 min a pé da entrada) — muito mais barato que hotéis dentro das muralhas. Guesthouses locais com charme, estacionamento fácil.</div>
+    <div class="sleep-option"><a class="wl" href="https://www.booking.com/hotel/gr/amymone.en.html" target="_blank"><b>Amymone Guesthouse</b></a> ou <a class="wl" href="https://www.booking.com/searchresults.en.html?ss=Nafplio+guesthouse" target="_blank"><b>Nafplio House</b></a> — bem avaliados, próximos da cidade velha.</div>
+    <div style="margin-top:8px"><span class="sleep-badge sb-red">🏡 Guesthouse ~€48–65/noite</span></div>
+  </div>
 </div>
-<div class="day-section">
-<div class="day-section-title">🌋 Porquê Milos em vez de Santorini</div>
-<div class="day-items">
-<div class="day-item">Milos é uma ilha vulcânica com <b>praias únicas no mundo</b> — formadas pela erosão de rochas vulcânicas em branco, laranja, cinzento. Alojamento 40–50% mais barato que Santorini em junho.</div>
-<div class="day-item">Menos turismo massificado, mais autêntica, melhor comida/preço. A Vénus de Milo foi encontrada aqui.</div>
+</div>
+
+<!-- ── ATHENS ── -->
+<div class="stop-wrap">
+<div class="stop">
+  <div class="stop-header at">
+    <div class="stop-meta">
+      <div class="stop-num">Dias 14–19 · 20–25 Junho</div>
+      <div class="stop-name">Atenas</div>
+      <div class="stop-theme">Acrópole · Museus · Exarchia · Peiraios 260 · Com o vosso amigo</div>
+    </div>
+    <div class="stop-nights">5 noites</div>
+  </div>
+  <div class="photo-gallery n3" data-gallery="athens">
+    <div class="photo-item loading"></div><div class="photo-item loading"></div><div class="photo-item loading"></div>
+  </div>
+  <div class="transport">
+    <span class="transport-icon">🚌</span>
+    <span><b>Nafplio → Atenas:</b> KTEL Terminal A (Kifissou), directo 2h15m, €15/pessoa. Metro aeroporto → centro: linha azul, ~40min, €10.50/pessoa.</span>
+  </div>
+  <div class="stop-section">
+    <div class="section-label">🏛 Sítios históricos</div>
+    <div class="items">
+      <div class="item"><a class="wl" href="https://www.theacropolismuseum.gr/en" target="_blank"><b>Acrópole + Parténon</b></a> — chegar às 8h antes do calor. Bilhete combinado €30 (cobre 7 sítios). Incluir a <b>Ágora Antiga</b> (onde Sócrates ensinava). Comprar online com antecedência.</div>
+      <div class="item"><a class="wl" href="https://www.theacropolismuseum.gr/en" target="_blank"><b>Museu da Acrópole</b></a> — cariátides originais, frisos do Parténon. Aberto até às 20h. Bilhete €10.</div>
+      <div class="item"><a class="wl" href="https://www.namuseum.gr/en/" target="_blank"><b>Museu Nacional de Arqueologia</b></a> — Máscara de Agamémnon, estátua de Poseidão em bronze, frescos minoicos de Santorini. ~3h. Bilhete €12.</div>
+      <div class="item"><a class="wl" href="https://en.wikipedia.org/wiki/Anafiotika" target="_blank"><b>Anafiotika</b></a> — mini-aldeia cíclada construída dentro da Plaka, sob a Acrópole. Visitar de manhã. Gratuito.</div>
+    </div>
+  </div>
+  <div class="stop-section">
+    <div class="section-label">🌃 Bairros e cultura viva</div>
+    <div class="items">
+      <div class="item"><a class="wl" href="https://en.wikipedia.org/wiki/Exarchia" target="_blank"><b>Exarchia</b></a> — bairro alternativo: murais políticos, colectivos, tabernas de bairro. Jantar no Telis (souvlaki mítico €4). A Atenas real. Perguntar ao amigo pela cena musical actual.</div>
+      <div class="item"><b>Koukaki e Monastiraki</b> — mercado de pulgas, lojas de vinil, cafés lentos.</div>
+    </div>
+  </div>
+  <div class="fest-wrap">
+    <div class="fest-box">
+      <div class="fest-name">🎵 Festivais e eventos em Atenas · Junho 2026</div>
+      <div class="fest-status watch">monitorizar</div>
+      <div class="fest-desc">
+        <b>Athens Jazz (Technopolis, Gazi)</b> — 25ª edição, entrada gratuita. Historicamente final de Maio a início de Junho; provavelmente acaba antes da vossa chegada (20 Jun), mas confirmar datas exactas em <a class="fest-link" href="https://athensjazz.gr/en/" target="_blank">athensjazz.gr</a>.<br><br>
+        <b>Athens Epidaurus Festival — Peiraios 260</b> — a fábrica industrial que programa música experimental e contemporânea (parceria com CTM Berlin em anos anteriores). Programa de Junho/Julho 2026 ainda não anunciado. Este é o mais promissor para o vosso gosto. Verificar em <a class="fest-link" href="https://aefestival.gr/schedule/?lang=en" target="_blank">aefestival.gr/schedule</a>.<br><br>
+        <b>Plisskën Festival</b> — o melhor festival alternativo grego (Caribou, Kamasi Washington, Sun Ra Arkestra, Mulatu Astatke). Eventos avulso em Junho (12 e 19 Jun) mas o festival principal previsto para Setembro 2026. <a class="fest-link" href="https://www.plisskenfestival.gr/events" target="_blank">plisskenfestival.gr</a><br><br>
+        <b>Onassis Stegi</b> — programação experimental/performativa contínua. Verificar em <a class="fest-link" href="https://www.onassis.org/stegi" target="_blank">onassis.org/stegi</a>.
+      </div>
+    </div>
+  </div>
+  <div class="sleep-box at">
+    <div class="sleep-label at">🛏 Alojamento — Atenas (5 noites)</div>
+    <div class="sleep-option"><b>Koukaki ou Pangrati</b> (bairros ao sul da Acrópole) — 15 min a pé dos monumentos, 30–40% mais barato que Monastiraki. Mais local, menos turístico.</div>
+    <div class="sleep-option"><a class="wl" href="https://www.citycircus.gr" target="_blank"><b>City Circus Athens</b></a> — hostel de design em Monastiraki, quartos privados, bem avaliado. Alternativa se preferirem centro.</div>
+    <div class="sleep-option">Airbnb em Koukaki ou Pagrati — estúdio com cozinha para poupar nas refeições.</div>
+    <div style="margin-top:8px"><span class="sleep-badge sb-blue">🏠 Studio/Hostel ~€48–68/noite</span></div>
+  </div>
 </div>
 </div>
-<div class="day-section">
-<div class="day-section-title">🗺 O que fazer</div>
-<div class="day-items">
-<div class="day-item"><a class="wl" href="https://en.wikipedia.org/wiki/Sarakiniko" rel="noopener" target="_blank"><b>Sarakiniko Beach</b></a> — paisagem lunar em rochas brancas polidas pelo vento. Uma das praias mais fotogénicas do mundo. 15 min de Adamas de autocarro.</div>
-<div class="day-item"><a class="wl" href="https://en.wikipedia.org/wiki/Kleftiko" rel="noopener" target="_blank"><b>Kleftiko</b></a> (barco, dia 20) — grutas e arcos de rocha vulcânica acessíveis só por mar. Excursão de barco com snorkel ~€25/pessoa.</div>
-<div class="day-item"><a class="wl" href="https://en.wikipedia.org/wiki/Catacombs_of_Milos" rel="noopener" target="_blank"><b>Catacumbas de Milos</b></a> (dia 19) — as mais antigas catacumbas cristãs da Grécia, século II. Bilhete €5. Único na Grécia.</div>
-<div class="day-item"><a class="wl" href="https://en.wikipedia.org/wiki/Plaka,_Milos" rel="noopener" target="_blank"><b>Aldeia de Plaka</b></a> (cima da ilha) — ruínas do castelo veneziano, vista para todo o arquipélago ao pôr-do-sol. Gratuito.</div>
-<div class="day-item"><a class="wl" href="https://en.wikipedia.org/wiki/Firopotamos" rel="noopener" target="_blank"><b>Firopotamos e Mandrakia</b></a> — pequenas aldeias de pescadores com syrmata (garagens de barcos coloridas dentro da rocha). Fotograficamente extraordinário.</div>
+
+<!-- ── ISLANDS HEADING ── -->
+<div class="sec-head"><h2>🌊 Ilhas — Descanso e Mar</h2></div>
+
+<!-- ── NAXOS ── -->
+<div class="stop-wrap">
+<div class="stop">
+  <div class="stop-header nx">
+    <div class="stop-meta">
+      <div class="stop-num">Dias 19–23 · 25–29 Junho</div>
+      <div class="stop-name">Naxos</div>
+      <div class="stop-theme">Maior Cíclada · Portara · Interior de montanha · Camping na praia</div>
+    </div>
+    <div class="stop-nights">4 noites</div>
+  </div>
+  <div class="photo-gallery n3" data-gallery="naxos">
+    <div class="photo-item loading"></div><div class="photo-item loading"></div><div class="photo-item loading"></div>
+  </div>
+  <div class="transport">
+    <span class="transport-icon">⛴</span>
+    <span><b>Piraeus → Naxos:</b> Blue Star Ferries, ~5h30m, €35–42/pessoa. Saídas diárias. Reservar com antecedência em <a class="wl" href="https://www.ferries.gr" target="_blank">ferries.gr</a>. Alternativa: ferry rápido SeaJets ~3h, €55/pessoa.</span>
+  </div>
+  <div class="stop-section">
+    <div class="section-label">🗺 O que fazer</div>
+    <div class="items">
+      <div class="item"><a class="wl" href="https://en.wikipedia.org/wiki/Portara_(Naxos)" target="_blank"><b>Portara ao pôr-do-sol</b></a> — ruína do Templo de Apolo à entrada do porto, 6 metros de mármore dourado contra o céu. Gratuito. Ver no primeiro dia.</div>
+      <div class="item"><a class="wl" href="https://en.wikipedia.org/wiki/Agia_Anna,_Naxos" target="_blank"><b>Maragas Beach</b></a> (dias 1–2) — 10km de areia dourada, dunas, água turquesa. O <a class="wl" href="https://www.campingmaragas.gr" target="_blank"><b>Camping Maragas</b></a> fica mesmo aqui: bungalows com cama, luz e WC, cozinha comunitária.</div>
+      <div class="item"><b>Interior da ilha</b> (dia 3) — aldeias de Chalki e Apeiranthos construídas em mármore. Queijo graviera comprado directamente a produtores. Autocarro local ~€3 ou bicicleta.</div>
+      <div class="item"><b>Snorkeling</b> — praias rochosas a norte de Naxos Town têm boa vida marinha. Alugar equipamento no camping ou na cidade (~€10/dia).</div>
+    </div>
+  </div>
+  <div class="tip">💡 <b>Naxos vs Paros:</b> Naxos tem mais profundidade — melhor comida, mais história, interior de montanha, e é mais barata. Paros é mais instagramável mas mais turística. Para o vosso perfil, Naxos é a escolha certa.</div>
+  <div class="sleep-box nx">
+    <div class="sleep-label nx">🛏 Alojamento — Naxos (4 noites)</div>
+    <div class="sleep-option"><b>2 noites camping:</b> <a class="wl" href="https://www.campingmaragas.gr" target="_blank"><b>Camping Maragas</b></a> — mesmo na praia. Bungalows para dois sem tenda própria: cama, luz, WC, duche. Duche e cozinha comunitária.</div>
+    <div class="sleep-option"><b>2 noites studio:</b> Studio simples com cozinha em Naxos Town — procurar em Booking por "Naxos Town studio". Mais animação nocturna e porto.</div>
+    <div style="margin-top:8px">
+      <span class="sleep-badge sb-camp">⛺ Bungalow ~€28–40/noite</span>
+      <span class="sleep-badge sb-teal" style="margin-left:6px">🏠 Studio ~€50–65/noite</span>
+    </div>
+  </div>
 </div>
 </div>
-<div class="sleep-box a">
-<div class="sleep-label a">🛏 Alojamento — Milos (5 noites)</div>
-<b>2 noites camping:</b> <a class="wl" href="https://www.campingmilos.gr" rel="noopener" target="_blank"><b>Camping Milos</b></a> perto de Adamas — bungalows ou tendas alugadas no local, piscina, duches. <span class="camp-tag">⛺ CAMPING</span>
-<br/><b>3 noites studio:</b> Studio simples em Adamas ou Pollonia (norte da ilha). Cozinha incluída.
-          <br/><span class="sleep-price camp">⛺ Bungalow ~€30–40/noite</span> <span class="sleep-price a">🏠 Studio ~€55–70/noite</span>
+
+<!-- ── MILOS ── -->
+<div class="stop-wrap">
+<div class="stop">
+  <div class="stop-header mi">
+    <div class="stop-meta">
+      <div class="stop-num">Dias 23–26 · 29 Junho – 1 Julho</div>
+      <div class="stop-name">Milos</div>
+      <div class="stop-theme">Ilha vulcânica · Sarakiniko · Kleftiko · Snorkeling extraordinário</div>
+    </div>
+    <div class="stop-nights">3 noites</div>
+  </div>
+  <div class="photo-gallery n3" data-gallery="milos">
+    <div class="photo-item loading"></div><div class="photo-item loading"></div><div class="photo-item loading"></div>
+  </div>
+  <div class="transport">
+    <span class="transport-icon">⛴</span>
+    <span><b>Naxos → Milos:</b> ferry directo ~2h, €18–25/pessoa (Blue Star). Verificar horários — nem todos os dias há ligação directa. Alternativa: Naxos → Piraeus → Milos.</span>
+  </div>
+  <div class="stop-section">
+    <div class="section-label">🌋 O que fazer</div>
+    <div class="items">
+      <div class="item"><a class="wl" href="https://en.wikipedia.org/wiki/Sarakiniko" target="_blank"><b>Sarakiniko Beach</b></a> — paisagem lunar de rochas brancas polidas pelo vento. Uma das praias mais fotogénicas do mundo. 15 min de Adamas de autocarro. Snorkeling directo das pedras.</div>
+      <div class="item"><a class="wl" href="https://en.wikipedia.org/wiki/Kleftiko" target="_blank"><b>Kleftiko</b></a> (barco, dia 2) — grutas e arcos de rocha vulcânica acessíveis só por mar. Excursão de barco colectiva com snorkeling incluído ~€30–50/pessoa. A experiência de snorkeling mais espectacular da Grécia: formações geológicas em carmesim, dourado e branco debaixo de água.</div>
+      <div class="item"><a class="wl" href="https://en.wikipedia.org/wiki/Catacombs_of_Milos" target="_blank"><b>Catacumbas de Milos</b></a> — as mais antigas catacumbas cristãs da Grécia, séc. II. Bilhete €5. Único no país.</div>
+      <div class="item"><a class="wl" href="https://en.wikipedia.org/wiki/Plaka,_Milos" target="_blank"><b>Aldeia de Plaka</b></a> — no topo da ilha, castelo veneziano em ruínas, pôr-do-sol mais bonito das Cíclades. À volta: <b>Firopotamos e Mandrakia</b> — aldeias de pescadores com syrmata (garagens de barcos coloridas dentro da rocha).</div>
+    </div>
+  </div>
+  <div class="stop-section">
+    <div class="section-label">✈ Regresso — 2 Julho</div>
+    <div class="items">
+      <div class="item"><b>Opção A (rápido):</b> voo Milos (MLO) → Atenas com Olympic Air ~25min (~€35–55/pessoa) + voo ATH → OPO Ryanair. Total ~€80–110/pessoa. Verificar em <a class="wl" href="https://www.olympicair.com" target="_blank">olympicair.com</a>.</div>
+      <div class="item"><b>Opção B (económico):</b> ferry noturno Milos → Piraeus (~7h, ~€35–45/pessoa) + metro ATH → aeroporto + voo de manhã. Poupar €40–70/pessoa vs avião.</div>
+    </div>
+  </div>
+  <div class="sleep-box mi">
+    <div class="sleep-label mi">🛏 Alojamento — Milos (3 noites)</div>
+    <div class="sleep-option"><b>1 noite camping:</b> <a class="wl" href="https://www.campingmilos.gr" target="_blank"><b>Camping Milos</b></a> (Adamas) — piscina, duches, bungalows disponíveis ou espaço para tenda.</div>
+    <div class="sleep-option"><b>2 noites studio:</b> Studio simples em Adamas ou Pollonia (norte da ilha). Cozinha incluída. Pollonia é mais calma e próxima das melhores praias do norte.</div>
+    <div style="margin-top:8px">
+      <span class="sleep-badge sb-camp">⛺ Camping ~€18–28/noite</span>
+      <span class="sleep-badge sb-orange" style="margin-left:6px">🏠 Studio ~€55–70/noite</span>
+    </div>
+  </div>
 </div>
-<div class="day-section">
-<div class="day-section-title">✈ Regresso — Dia 22</div>
-<div class="day-items">
-<div class="day-item"><b>Opção A (mais rápido):</b> voo Milos (MLO) → Atenas (ATH) com Olympic Air ~25 min (~€30–50/pessoa) + voo ATH → Porto (OPO) Ryanair.</div>
-<div class="day-item"><b>Opção B (mais económico):</b> ferry noturno Milos → Piraeus (~7h, ~€35–45/pessoa, não precisa camarote) + voo ATH → OPO de manhã.</div>
 </div>
-</div>
-</div>
-</div>
-<!-- ORÇAMENTO A -->
+
+<!-- ── BUDGET ── -->
 <div class="budget-wrap">
 <div class="budget-box">
-<div class="budget-head a">💶 Orçamento estimado — Itinerário A (22 dias, 2 pessoas)</div>
-<table class="budget-table">
-<tr><td>✈ Voos ida + regresso (Porto ↔ Grécia)</td><td class="val">€320–520</td></tr>
-<tr><td>🛏 Alojamento — 13 noites studio (média €58/n)</td><td class="val">€754</td></tr>
-<tr><td>⛺ Camping — 6 noites bungalow (média €35/n) <span class="saving">↓ poupança vs studio: ~€140</span></td><td class="val">€210</td></tr>
-<tr><td>🍽 Alimentação — €22/dia para dois (mercados + cozinhar + 1 refeição fora)</td><td class="val">€484</td></tr>
-<tr><td>⛴ Ferries — Piraeus→Naxos + inter-ilhas + regresso</td><td class="val">€240</td></tr>
-<tr><td>🚌 Autocarros — Atenas, KTEL Nafplio, Sparta</td><td class="val">€120</td></tr>
-<tr><td>🎭 Epidauro Festival (2 bilhetes)</td><td class="val">€80–130</td></tr>
-<tr><td>🎸 Release Athens — 1 concerto (2 bilhetes)</td><td class="val">€60–80</td></tr>
-<tr><td>🏛 Entradas (Acrópole combinado, museus, Micenas)</td><td class="val">€140</td></tr>
-<tr><td>⛵ Excursão de barco Kleftiko (Milos)</td><td class="val">€50</td></tr>
-<tr><td>☀️ Extras e imprevistos</td><td class="val">€150</td></tr>
-<tr class="budget-total"><td>TOTAL ESTIMADO — 22 dias para dois</td><td class="val a">€2.608–2.878</td></tr>
-<tr><td colspan="2" style="text-align:right;font-size:.8rem;color:var(--muted);padding:8px 16px">≈ <b>€118–131/dia para dois</b> · Com voos baratos e campismo máximo: ~€110/dia</td></tr>
-</table>
-<div class="budget-note">💡 Comprar tenda básica (~€70, não incluída acima) permite substituir bungalows por tendas próprias (~€12–18/noite) e poupar mais €80–100 extra. Tenda Decathlon Quechua 2 Seconds é perfeita — 2 min a montar, €70–80.</div>
+  <div class="budget-head">💶 Orçamento estimado — Sem voos (já comprados)</div>
+  <table class="budget-table">
+    <tr><td colspan="2" style="background:#f8f5f0;font-size:.78rem;color:var(--muted);padding:7px 18px;font-style:italic">Opção A = com Alonnisos · Opção B = sem Alonnisos</td></tr>
+    <tr><td>🛏 Alojamento — 23–26 noites (mix camping €28/n + studio €58/n)</td><td class="val">€1.100–1.300</td></tr>
+    <tr><td>⛺ Camping — 5–6 noites bungalow/tenda <span style="color:#16a34a;font-size:.78rem;margin-left:6px">↓ poupança ~€180</span></td><td class="val">Incluído acima</td></tr>
+    <tr><td>🍽 Alimentação — €22/dia para dois × 26 dias</td><td class="val">€572</td></tr>
+    <tr><td>🚌 Autocarros continente (Tessalónica → Olimpo → Meteora → Delphi → Nafplio → Atenas)</td><td class="val">€150</td></tr>
+    <tr><td>⛴ Ferries — Piraeus→Naxos + Naxos→Milos + regresso</td><td class="val">€180–220</td></tr>
+    <tr><td>⛴ Opção A: ferries extras Alonnisos (Volos→Alonnisos→Agios Konstantinos)</td><td class="val">+€100</td></tr>
+    <tr><td>🏛 Entradas — Meteora, Delphi+Museu, Micenas, Epidauro, Acropóle combo, Museu Nacional</td><td class="val">€150</td></tr>
+    <tr><td>⛵ Excursão barco Kleftiko — Milos</td><td class="val">€60</td></tr>
+    <tr><td>🎭 Festivais / espetáculos (estimativa — dependente do programa)</td><td class="val">€50–100</td></tr>
+    <tr><td>☀️ Extras, snorkeling gear, taxis, imprevistos</td><td class="val">€150</td></tr>
+    <tr class="budget-total"><td><b>TOTAL SEM VOOS — Opção B (23 noites)</b></td><td class="val">≈ €2.412–2.602</td></tr>
+    <tr class="budget-total"><td><b>TOTAL SEM VOOS — Opção A (26 noites, com Alonnisos)</b></td><td class="val">≈ €2.612–2.852</td></tr>
+    <tr><td colspan="2" style="text-align:right;font-size:.78rem;color:var(--muted);padding:8px 18px">Opção B ≈ <b>€93–100/dia para dois</b> · Opção A ≈ <b>€100–110/dia para dois</b></td></tr>
+  </table>
+  <div class="budget-note">💡 Com tenda própria (Decathlon Quechua 2 Seconds, ~€70) substituem bungalows por tenda nos campings: €12–18/noite em vez de €28–40. Poupança de €80–120 extra. O maior "hack": cozinhar no camping e nos studios poupa €10–15/dia vs comer sempre fora.</div>
 </div>
 </div>
-</div><!-- /days-wrap -->
-</div><!-- /itin a -->
-<!-- ══════════════════════════ ITINERÁRIO B ══════════════════════════ -->
-<div class="itin" id="b">
-<div class="itin-top b">
-<div class="itin-label">Itinerário B · 23 dias</div>
-<div class="itin-title">✦ Norte + Esporades</div>
-<div class="itin-sub">Atenas · Tessalónica · Meteora · Skiathos · Alonnisos · Skopelos · <s style="opacity:.5">Hidra</s> Agistri</div>
-<div class="itin-pills">
-<span class="itin-pill">🤘 MammothFest Tessalónica</span>
-<span class="itin-pill">🐴 Agistri em vez de Hidra</span>
-<span class="itin-pill">⛺ Campismo nas Esporades</span>
-</div>
-</div>
-<div class="ribbon">
-<div class="ribbon-inner">
-<div class="rnode"><span class="rname b">Atenas</span><span class="rdays">3n</span></div><span class="rarrow">→</span>
-<div class="rnode"><span class="rname b">Tessalónica</span><span class="rdays">4n</span></div><span class="rarrow">→</span>
-<div class="rnode"><span class="rname b">Meteora</span><span class="rdays">2n</span></div><span class="rarrow">→</span>
-<div class="rnode"><span class="rname b">Skiathos</span><span class="rdays">2n</span></div><span class="rarrow">→</span>
-<div class="rnode"><span class="rname b">Alonnisos</span><span class="rdays">2n</span></div><span class="rarrow">→</span>
-<div class="rnode"><span class="rname b">Skopelos</span><span class="rdays">4n</span></div><span class="rarrow">→</span>
-<div class="rnode"><span class="rname b">Atenas</span><span class="rdays">1n</span></div><span class="rarrow">→</span>
-<div class="rnode"><span class="rname b">Agistri</span><span class="rdays">4n</span></div>
-</div>
-</div>
-<!-- VOOS B -->
-<div class="voos-wrap">
-<div class="voos-box">
-<div class="voos-head b"><span style="font-size:1.3rem">✈</span><span class="voos-head-text b">Voos — Porto ↔ Grécia</span></div>
-<table class="voos-table">
-<tr><th>Voo</th><th>Rota</th><th>Companhia</th><th style="text-align:right">Preço (2 pax)</th></tr>
-<tr><td>✈ Ida · Dia 1</td><td>Porto (OPO) → Atenas (ATH) directo · ~3h45m</td><td>Ryanair / Aegean</td><td class="price-b" style="text-align:right">€120–200</td></tr>
-<tr><td>✈ Regresso · Dia 23</td><td>Atenas (ATH) → Porto (OPO) directo · ~3h45m</td><td>Ryanair / Aegean</td><td class="price-b" style="text-align:right">€120–200</td></tr>
-<tr class="voos-total-row b"><td colspan="3"><b>Total voos (2 pax)</b> — circuito fechado Atenas/Atenas</td><td class="price-b" style="text-align:right">€240–400</td></tr>
-</table>
-<div class="voos-note">💡 Este itinerário tem a lógica mais simples: entrar e sair de Atenas. O comboio Atenas–Tessalónica (~4h30m, €35/pessoa) é económico e confortável. Reservar em <b><a class="wl" href="https://www.trainose.gr/en/" rel="noopener" target="_blank">trainose.gr</a></b>.</div>
-</div>
-</div>
-<div class="days-wrap">
-<div class="sec-head b">📅 Roteiro Dia a Dia</div>
-<!-- DIA 1 + DIAS 2-4: ATENAS -->
-<div class="day-block">
-<div class="day-header b">
-<div>
-<div class="day-num">Dias 1–3</div>
-<div class="day-loc">🏛 Atenas</div>
-</div>
-<div class="day-theme">Chegada · Acrópole · Exarchia</div>
-</div>
-<div class="day-body"><div class="photo-gallery n3" data-gallery="athens"><div class="photo-item loading"></div><div class="photo-item loading"></div><div class="photo-item loading"></div></div>
 
-<div class="transport-row">
-<span class="transport-icon">✈</span>
-<span><b>Chegada:</b> Metro aeroporto → centro ~40 min, €10.50/pessoa.</span>
-</div>
-<div class="day-section">
-<div class="day-section-title">🗺 O que fazer</div>
-<div class="day-items">
-<div class="day-item"><a class="wl" href="https://www.theacropolismuseum.gr/en" rel="noopener" target="_blank"><b>Acrópole + Museu</b></a> (dia 2) — bilhete combinado €30 online. Chegar às 8h.</div>
-<div class="day-item"><b>Exarchia</b> (noite) — bairro alternativo, murais, tabernas baratas (€8–12/refeição), música ao vivo espontânea.</div>
-<div class="day-item"><a class="wl" href="https://www.namuseum.gr/en/" rel="noopener" target="_blank"><b>Museu Arqueológico Nacional</b></a> (dia 3, manhã) — Máscara de Agamémnon, esculturas helenísticas. Tarde livre para mercado de Monastiraki.</div>
-</div>
-</div>
-<div class="sleep-box b">
-<div class="sleep-label b">🛏 Alojamento — Atenas (3 noites)</div>
-          Hostel de design quarto privado — City Circus Athens ou similar.
-          <br/><span class="sleep-price b">~€48–62/noite</span>
-</div>
-</div>
-</div>
-<!-- DIAS 4-7: TESSALÓNICA -->
-<div class="day-block">
-<div class="day-header b">
-<div>
-<div class="day-num">Dias 4–7</div>
-<div class="day-loc">🎸 Tessalónica</div>
-</div>
-<div class="day-theme">MammothFest · Bizântino · A cidade mais autêntica da Grécia</div>
-</div>
-<div class="day-body"><div class="photo-gallery n3" data-gallery="thessaloniki"><div class="photo-item loading"></div><div class="photo-item loading"></div><div class="photo-item loading"></div></div>
+</div><!-- /itin tab -->
 
-<div class="transport-row">
-<span class="transport-icon">🚆</span>
-<span><b>Atenas → Tessalónica:</b> comboio InterCity, ~4h30m, €35/pessoa. Reservar em <b><a class="wl" href="https://www.trainose.gr/en/" rel="noopener" target="_blank">trainose.gr</a></b>. Alternativa: autocarro KTEL ~5h, €28/pessoa.</span>
+<!-- ══════════════ LEFT OUT TAB ══════════════ -->
+<div class="tab-content" id="leftout">
+<div style="max-width:900px;margin:32px auto 0;padding:0 16px">
+  <h2 style="font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:400;margin-bottom:8px">Para outra viagem</h2>
+  <p style="color:var(--muted);font-size:.88rem;margin-bottom:28px;font-style:italic">Sítios e eventos que ficaram de fora — não por falta de interesse, mas por tempo ou datas.</p>
 </div>
-<div class="day-section">
-<div class="day-section-title">🗺 O que fazer</div>
-<div class="day-items">
-<div class="day-item"><a class="wl" href="https://www.mbp.gr/en" rel="noopener" target="_blank"><b>Museu Bizântino e Cristão</b></a> (dia 5) — um dos melhores do mundo, prémio de arquitectura europeu. Mosaicos do século IV–XV. Bilhete €8.</div>
-<div class="day-item"><a class="wl" href="https://whc.unesco.org/en/list/456" rel="noopener" target="_blank"><b>Igrejas Bizântinas UNESCO</b></a> — Agios Dimitrios (maior basílica paleocristã da Grécia, gratuita), Rotunda (mausoléu romano). Mapa de igrejas gratuito nos museus.</div>
-<div class="day-item"><b>Museu Arqueológico</b> (dia 6) — tesouros macedónios, incluindo peças de Vergina (túmulos de Filipe II, pai de Alexandre Magno). Bilhete €10.</div>
-<div class="day-item"><a class="wl" href="https://en.wikipedia.org/wiki/Ladadika" rel="noopener" target="_blank"><b>Ladadika e Valaoritou</b></a> (noites) — os bairros de vida nocturna de Tessalónica. Rebetiko ao vivo em tabernas, bougatsa ao pequeno-almoço (€2.50).</div>
-<div class="day-item"><a class="wl" href="https://en.wikipedia.org/wiki/Modiano_Market" rel="noopener" target="_blank"><b>Mercado Modiano</b></a> — coberto, histórico, especiarias, peixe, queijo. Almoços de tabuleiro €5–7. A vida de bairro.</div>
-</div>
-</div>
-<div class="day-section">
-<div class="day-section-title">🤘 Festival</div>
-<div class="fest-box">
-<div class="fest-name">MammothFest 2026</div>
-<div class="fest-date">11–13 Junho 2026 · Soul Open Air, Tessalónica</div>
-<div class="fest-desc">O maior festival de metal do norte da Grécia. Cartaz 2026: <b>Carcass</b> (regressam após 10 anos), <b>Soen</b>, <b>She Past Away</b>, Booze &amp; Glory. Bilhetes de 3 dias são mais baratos que diários.</div>
-<a class="fest-link" href="https://mammothfest.gr" target="_blank">→ Página oficial · bilhetes: cometogether.live</a>
-</div>
-</div>
-<div class="sleep-box b">
-<div class="sleep-label b">🛏 Alojamento — Tessalónica (4 noites)</div>
-          Studio com cozinha no bairro de Ladadika ou centro — poupar na alimentação cozinhando. <b>Reservar com antecedência</b> na semana do MammothFest.
-          <br/><span class="sleep-price b">~€42–58/noite</span>
-</div>
-</div>
-</div>
-<!-- DIAS 8-9: METEORA -->
-<div class="day-block">
-<div class="day-header b">
-<div>
-<div class="day-num">Dias 8–9</div>
-<div class="day-loc">⛰ Meteora</div>
-</div>
-<div class="day-theme">Mosteiros nas rochas · Uma das paisagens mais surreais da Europa</div>
-</div>
-<div class="day-body"><div class="photo-gallery n3" data-gallery="meteora"><div class="photo-item loading"></div><div class="photo-item loading"></div><div class="photo-item loading"></div></div>
+<div class="leftout-grid">
 
-<div class="transport-row">
-<span class="transport-icon">🚌</span>
-<span><b>Tessalónica → Kalambaka:</b> autocarro KTEL ~3h, €18/pessoa. Ou comboio ~3h30m. Base na vila de Kalambaka.</span>
-</div>
-<div class="day-section">
-<div class="day-section-title">🗺 O que fazer</div>
-<div class="day-items">
-<div class="day-item"><a class="wl" href="https://whc.unesco.org/en/list/455" rel="noopener" target="_blank"><b>Mosteiros (dia 8)</b></a> — 6 mosteiros activos suspensos em pilares de rocha. Os melhores: Megalo Meteoro (maior), Varlaam, Roussanou. Vestuário coberto obrigatório. Bilhete €3–5 por mosteiro.</div>
-<div class="day-item"><b>Trilho a pé (dia 9)</b> — 8 km entre os mosteiros. Começar às 7h30 para evitar calor. Panoramas de tirar o fôlego a cada curva. Nível médio.</div>
-<div class="day-item"><b>Pôr-do-sol de Doupiani</b> — miradouro gratuito na saída de Kalambaka. Os pilares dourados ao sol. Chegar 1h antes.</div>
-</div>
-</div>
-<div class="sleep-box b">
-<div class="sleep-label b">🛏 Alojamento — Kalambaka (2 noites)</div>
-          Guesthouses familiares em Kalambaka com vistas para os penhascos. Ziogas Rooms ou similares.
-          <br/><span class="sleep-price b">~€40–55/noite</span>
-</div>
-<div class="tip-box">🌅 <b>Madrugada em Meteora:</b> Acordar às 6h, subir a pé antes dos autocarros chegarem. Meteora com neblina matinal nos vales e os mosteiros iluminados pela luz dourada é uma das imagens mais impressionantes da Grécia.</div>
-</div>
-</div>
-<!-- DIAS 10-11: SKIATHOS -->
-<div class="day-block">
-<div class="day-header b">
-<div>
-<div class="day-num">Dias 10–11</div>
-<div class="day-loc">🌊 Skiathos</div>
-</div>
-<div class="day-theme">Koukounaries · Praias · Barco para Lalaria</div>
-</div>
-<div class="day-body"><div class="photo-gallery n2" data-gallery="skiathos"><div class="photo-item loading"></div><div class="photo-item loading"></div></div>
+  <div class="lo-card">
+    <h3>🏔 Zagori · Desfiladeiro de Vikos</h3>
+    <p>O desfiladeiro mais profundo da Europa em relação à largura. 46 aldeias de pedra, pontes medievais sem argamassa, trilho Monodendri→Papingo (14km, 6h). Aldeia de Papingo às 7h com cabras nas ruas e névoa nos vales.</p>
+    <span class="lo-reason">Requer desvio a noroeste + 5 dias. Para uma viagem dedicada ao norte da Grécia.</span>
+  </div>
 
-<div class="transport-row">
-<span class="transport-icon">⛴</span>
-<span><b>Kalambaka → Skiathos:</b> autocarro Kalambaka → Volos (~2h, €10) + ferry Volos → Skiathos (~3h, €25/pessoa). Reservar em <a class="wl" href="https://www.ferries.gr" rel="noopener" target="_blank">ferries.gr</a>.</span>
-</div>
-<div class="day-section">
-<div class="day-section-title">🗺 O que fazer (2 dias focados)</div>
-<div class="day-items">
-<div class="day-item"><a class="wl" href="https://en.wikipedia.org/wiki/Koukounaries" rel="noopener" target="_blank"><b>Koukounaries Beach</b></a> — consistentemente na top 10 da Grécia: pinheiros até à água, areia fina, água cristalina. Autocarro KTEL local.</div>
-<div class="day-item"><a class="wl" href="https://en.wikipedia.org/wiki/Lalaria_beach" rel="noopener" target="_blank"><b>Lalaria Beach</b></a> (barco, dia 11) — acessível só de barco. Arco de rocha natural, seixos brancos, cor de turquesa impossível. Excursão colectiva ~€20/pessoa.</div>
-</div>
-</div>
-<div class="sleep-box b">
-<div class="sleep-label b">🛏 Alojamento — Skiathos (2 noites)</div>
-<b>1 noite camping:</b> <a class="wl" href="https://www.campingkoukounaries.gr" rel="noopener" target="_blank"><b>Camping Koukounaries</b></a> — mesmo ao lado da praia mais bonita da ilha. Bungalows ou local para tenda. <span class="camp-tag">⛺ CAMPING</span>
-<br/><b>1 noite pensão:</b> Pensão simples em Skiathos Town.
-          <br/><span class="sleep-price camp">⛺ Camping ~€15–35/noite</span> <span class="sleep-price b">🏠 Pensão ~€45–60/noite</span>
-</div>
-</div>
-</div>
-<!-- DIAS 12-13: ALONNISOS -->
-<div class="day-block">
-<div class="day-header b">
-<div>
-<div class="day-num">Dias 12–13</div>
-<div class="day-loc">🐟 Alonnisos</div>
-</div>
-<div class="day-theme">Parque Marinho · Mergulho · A mais selvagem das Esporades</div>
-</div>
-<div class="day-body"><div class="photo-gallery n2" data-gallery="alonnisos"><div class="photo-item loading"></div><div class="photo-item loading"></div></div>
+  <div class="lo-card">
+    <h3>🌿 Paros</h3>
+    <p>Igreja das 100 Portas (séc. IV–VII), porto de Naoussa, boas praias. Encantadora mas algo redundante com Naxos — vibe semelhante, mais cara e mais turística. Fica bem num circuito de 3 ilhas se tiverem mais tempo.</p>
+    <span class="lo-reason">Naxos+Milos cobre melhor os vossos interesses em 7–8 dias.</span>
+  </div>
 
-<div class="transport-row">
-<span class="transport-icon">⛴</span>
-<span><b>Skiathos → Alonnisos:</b> ferry via Skopelos, ~2h total, ~€15/pessoa.</span>
-</div>
-<div class="day-section">
-<div class="day-section-title">🗺 O que fazer</div>
-<div class="day-items">
-<div class="day-item"><a class="wl" href="https://en.wikipedia.org/wiki/National_Marine_Park_of_Alonnisos_Northern_Sporades" rel="noopener" target="_blank"><b>Parque Marinho Nacional</b></a> — o maior parque marinho da Europa. Habitat da foca-monge mediterrânica. Excursão de barco com snorkel ~€25/pessoa. Água absolutamente cristalina.</div>
-<div class="day-item"><a class="wl" href="https://en.wikipedia.org/wiki/Alonnisos" rel="noopener" target="_blank"><b>Chora (aldeia velha)</b></a> — restaurada no topo de um morro, vista para o mar. Muito menos turística que Skopelos ou Skiathos, preços 20–30% mais baixos.</div>
-<div class="day-item">Praias desertas acessíveis a pé ou de barco. Aluguer de kayak (~€15/dia) para explorar a costa.</div>
-</div>
-</div>
-<div class="sleep-box b">
-<div class="sleep-label b">🛏 Alojamento — Alonnisos (2 noites)</div>
-          Studios simples na Chora ou junto ao porto. Mais baratos que Skiathos.
-          <br/><span class="sleep-price b">~€38–52/noite</span>
-</div>
-</div>
-</div>
-<!-- DIAS 14-17: SKOPELOS -->
-<div class="day-block">
-<div class="day-header b">
-<div>
-<div class="day-num">Dias 14–17</div>
-<div class="day-loc">🎬 Skopelos</div>
-</div>
-<div class="day-theme">A ilha de Mamma Mia · Pinheiros até ao mar · 123 igrejas</div>
-</div>
-<div class="day-body"><div class="photo-gallery n2" data-gallery="skopelos"><div class="photo-item loading"></div><div class="photo-item loading"></div></div>
+  <div class="lo-card">
+    <h3>🌊 Skiathos · Skopelos</h3>
+    <p>Skiathos tem a Koukounaries (top 10 praias da Grécia) e Lalaria (só de barco). Skopelos é a ilha do Mamma Mia, com 123 igrejas e pinheiros até ao mar. Alonnisos fica ao lado e é muito mais selvagem.</p>
+    <span class="lo-reason">Incluídas na Opção A de forma parcial; para uma rota exclusiva das Esporades.</span>
+  </div>
 
-<div class="transport-row">
-<span class="transport-icon">⛴</span>
-<span><b>Alonnisos → Skopelos:</b> ferry ~45 min, ~€10/pessoa.</span>
-</div>
-<div class="day-section">
-<div class="day-section-title">🗺 O que fazer</div>
-<div class="day-items">
-<div class="day-item"><b>Igreja de Agios Ioannis</b> (dia 15) — cena final de Mamma Mia!: 200 degraus na rocha, vista para o mar a 360°. 30 min a pé ou barco de táxi. Ao pôr-do-sol.</div>
-<div class="day-item"><b>Skopelos Town</b> — a cidade velha mais bonita das Esporades: casas brancas com telhados de ardósia, vielas em escada, Castelo no topo. Tarde livre.</div>
-<div class="day-item"><b>Praias de Milia e Kastani</b> (dia 16) — cenários do filme. Scooter alugado ~€15/dia para chegar às praias menos acessíveis.</div>
-<div class="day-item"><b>Glossa</b> (aldeia interior, dia 17) — a aldeia mais tranquila de Skopelos, vista de barco para Evia. Muito silencioso e autêntico.</div>
-</div>
-</div>
-<div class="sleep-box b">
-<div class="sleep-label b">🛏 Alojamento — Skopelos (4 noites)</div>
-<b>2 noites camping:</b> Campismo perto de praias (verificar opções locais / campismo informal em praias menos frequentadas). <span class="camp-tag">⛺ CAMPING</span>
-<br/><b>2 noites studio:</b> Studio em Skopelos Town ou Glossa.
-          <br/><span class="sleep-price camp">⛺ Camping ~€10–20/noite</span> <span class="sleep-price b">🏠 Studio ~€45–60/noite</span>
-</div>
-</div>
-</div>
-<!-- DIA 18: TRÂNSITO -->
-<div class="day-block">
-<div class="day-header b">
-<div>
-<div class="day-num">Dia 18</div>
-<div class="day-loc">🚌 Trânsito → Atenas</div>
-</div>
-<div class="day-theme">Ferry + autocarro · 1 noite de escala</div>
-</div>
-<div class="day-body">
-<div class="transport-row">
-<span class="transport-icon">⛴</span>
-<span><b>Skopelos → Agios Konstantinos:</b> ferry ~3h30m. + autocarro KTEL → Atenas ~2h30m, ~€12/pessoa. Chegar à tarde.</span>
-</div>
-<div class="sleep-box b">
-<div class="sleep-label b">🛏 Alojamento — Atenas (1 noite)</div>
-          Budget guesthouse ou hostel. Noite de descanso antes de Agistri.
-          <br/><span class="sleep-price b">~€45–55/noite</span>
-</div>
-</div>
-</div>
-<!-- DIAS 19-22: AGISTRI -->
-<div class="day-block">
-<div class="day-header b">
-<div>
-<div class="day-num">Dias 19–22</div>
-<div class="day-loc">🌿 Agistri</div>
-</div>
-<div class="day-theme">Em vez de Hidra · 1h30 de Atenas · Calma · Preço justo</div>
-</div>
-<div class="day-body"><div class="photo-gallery n2" data-gallery="agistri"><div class="photo-item loading"></div><div class="photo-item loading"></div></div>
+  <div class="lo-card">
+    <h3>🏰 Ioannina · Lago e Ilha de Ali Pasha</h3>
+    <p>Capital do Épiro. Ilha habitada no meio do lago onde Ali Pasha (governador otomano que inspirou Lord Byron) foi assassinado em 1822. Castelo de Its Kale, bazar de prata trabalhada à mão. Gastronomia completamente diferente do resto da Grécia.</p>
+    <span class="lo-reason">Requer desvio a noroeste — faria sentido combinado com Zagori.</span>
+  </div>
 
-<div class="transport-row">
-<span class="transport-icon">⛴</span>
-<span><b>Piraeus → Agistri:</b> ferry ~1h30m, ~€12–16/pessoa. Ou hidrofoil ~50 min, €20/pessoa. Saídas várias de manhã do porto do Piraeus.</span>
-</div>
-<div class="day-section">
-<div class="day-section-title">🌿 Porquê Agistri em vez de Hidra</div>
-<div class="day-items">
-<div class="day-item">Agistri é uma ilha pequena e verde (pinheiros até ao mar) a 1h30 de Atenas. Muito menos turistas, preços a metade de Hidra. Praias de pinheiro + seixos, ambiente local.</div>
-<div class="day-item">Hidra era bonita mas custava €80–100/noite de alojamento. Agistri: €40–55/noite. Poupança de €40+/noite × 4 noites = €160 poupados.</div>
-</div>
-</div>
-<div class="day-section">
-<div class="day-section-title">🗺 O que fazer</div>
-<div class="day-items">
-<div class="day-item"><b>Praia de Skala</b> — a principal, junto ao porto. Pinheiros, pedras, água cristalina.</div>
-<div class="day-item"><b>Praia de Aponisos</b> (30 min a pé ou de barco) — mais isolada, natureza preservada.</div>
-<div class="day-item"><b>Metochi e Limenaria</b> (bicicleta alugada ~€10/dia) — aldeias do interior da ilha com cafés locais e vistas para o Golfo Sarónico.</div>
-<div class="day-item">Ritmo lento, leituras na praia, jantar de peixe no porto (~€10–14/pessoa). Descompressão antes do regresso.</div>
-</div>
-</div>
-<div class="sleep-box b">
-<div class="sleep-label b">🛏 Alojamento — Agistri (4 noites)</div>
-<b>2 noites camping:</b> <a class="wl" href="https://en.wikipedia.org/wiki/Agistri" rel="noopener" target="_blank"><b>Camping Agistri</b></a> (perto de Skala) — bungalows ou local para tenda, piscina, ambiente descontraído. <span class="camp-tag">⛺ CAMPING</span>
-<br/><b>2 noites studio:</b> Studio simples em Skala ou Megalochori.
-          <br/><span class="sleep-price camp">⛺ Camping ~€25–35/noite</span> <span class="sleep-price b">🏠 Studio ~€42–55/noite</span>
-</div>
-<div class="day-section">
-<div class="day-section-title">✈ Regresso — Dia 23</div>
-<div class="day-items">
-<div class="day-item">Ferry Agistri → Piraeus (~1h30m) + metro → aeroporto ATH + voo ATH → Porto OPO. Calcular ~5h da ilha ao avião.</div>
-</div>
-</div>
-</div>
-</div>
-<!-- ORÇAMENTO B -->
-<div class="budget-wrap">
-<div class="budget-box">
-<div class="budget-head b">💶 Orçamento estimado — Itinerário B (23 dias, 2 pessoas)</div>
-<table class="budget-table">
-<tr><td>✈ Voos ida + regresso (Porto ↔ Atenas)</td><td class="val">€240–400</td></tr>
-<tr><td>🛏 Alojamento — 14 noites studio/pensão (média €52/n)</td><td class="val">€728</td></tr>
-<tr><td>⛺ Camping — 7 noites bungalow/campsite (média €28/n) <span class="saving">↓ vs hotel: ~€170</span></td><td class="val">€196</td></tr>
-<tr><td>🍽 Alimentação — €22/dia para dois</td><td class="val">€506</td></tr>
-<tr><td>🚆 Comboio Atenas → Tessalónica (2 pax)</td><td class="val">€70</td></tr>
-<tr><td>🚌 Autocarros — Tessalónica→Kalambaka + outros</td><td class="val">€90</td></tr>
-<tr><td>⛴ Ferries — Esporades inter-ilhas + regresso</td><td class="val">€200</td></tr>
-<tr><td>⛴ Ferry Piraeus ↔ Agistri (ida e volta)</td><td class="val">€55</td></tr>
-<tr><td>🤘 MammothFest — 3 dias (2 bilhetes)</td><td class="val">€80–110</td></tr>
-<tr><td>🏛 Entradas — museus, mosteiros Meteora</td><td class="val">€100</td></tr>
-<tr><td>🛵 Aluguer scooter — 2 dias (Skopelos)</td><td class="val">€30</td></tr>
-<tr><td>☀️ Extras e imprevistos</td><td class="val">€140</td></tr>
-<tr class="budget-total b"><td>TOTAL ESTIMADO — 23 dias para dois</td><td class="val b">€2.435–2.625</td></tr>
-<tr><td colspan="2" style="text-align:right;font-size:.8rem;color:var(--muted);padding:8px 16px">≈ <b>€106–114/dia para dois</b> · Dentro do orçamento alvo ✓</td></tr>
-</table>
-<div class="budget-note">💡 O Itinerário B é o mais equilibrado. Agistri em vez de Hidra poupa ~€160. Alonnisos é 20–30% mais barata que Skiathos com qualidade igual. Com campismo próprio (tenda ~€70), descem para ~€100/dia.</div>
-</div>
-</div>
-</div>
-</div><!-- /itin b -->
-<!-- ══════════════════════════ ITINERÁRIO C ══════════════════════════ -->
-<div class="itin" id="c">
-<div class="itin-top c">
-<div class="itin-label">Itinerário C · 23 dias</div>
-<div class="itin-title">✦ Natureza + Comunidades</div>
-<div class="itin-sub">Atenas · Delphi · Ioannina · Zagori · Creta · Workaway</div>
-<div class="itin-pills">
-<span class="itin-pill">🥾 Gorge de Vikos</span>
-<span class="itin-pill">🌿 Workaway em Creta</span>
-<span class="itin-pill">⛺ Campismo + Ferry noturno</span>
-</div>
-</div>
-<div class="ribbon">
-<div class="ribbon-inner">
-<div class="rnode"><span class="rname c">Atenas</span><span class="rdays">3n</span></div><span class="rarrow">→</span>
-<div class="rnode"><span class="rname c">Delphi</span><span class="rdays">2n</span></div><span class="rarrow">→</span>
-<div class="rnode"><span class="rname c">Ioannina</span><span class="rdays">2n</span></div><span class="rarrow">→</span>
-<div class="rnode"><span class="rname c">Zagori</span><span class="rdays">5n</span></div><span class="rarrow">→</span>
-<div class="rnode"><span class="rname c">⛴ noturno</span><span class="rdays">1n</span></div><span class="rarrow">→</span>
-<div class="rnode"><span class="rname c">Heraklion</span><span class="rdays">2n</span></div><span class="rarrow">→</span>
-<div class="rnode"><span class="rname c">Chania</span><span class="rdays">5n</span></div><span class="rarrow">→</span>
-<div class="rnode"><span class="rname c">Workaway</span><span class="rdays">3n</span></div>
-</div>
-</div>
-<!-- VOOS C -->
-<div class="voos-wrap">
-<div class="voos-box">
-<div class="voos-head c"><span style="font-size:1.3rem">✈</span><span class="voos-head-text c">Voos — Porto ↔ Grécia</span></div>
-<table class="voos-table">
-<tr><th>Voo</th><th>Rota</th><th>Companhia</th><th style="text-align:right">Preço (2 pax)</th></tr>
-<tr><td>✈ Ida · Dia 1</td><td>Porto (OPO) → Atenas (ATH) directo · ~3h45m</td><td>Ryanair / Aegean</td><td class="price-c" style="text-align:right">€120–200</td></tr>
-<tr><td>✈ Regresso · Opção A</td><td>Chania (CHQ) → Porto via Lisboa · Ryanair sazonal</td><td>Ryanair</td><td class="price-c" style="text-align:right">€100–180</td></tr>
-<tr><td>✈ Regresso · Opção B</td><td>Heraklion (HER) → Atenas + ATH → Porto (OPO)</td><td>Aegean + Ryanair</td><td class="price-c" style="text-align:right">€180–280</td></tr>
-<tr class="voos-total-row c"><td colspan="3"><b>Total voos (2 pax)</b> — Opção A mais económica</td><td class="price-c" style="text-align:right">€220–380</td></tr>
-</table>
-<div class="voos-note">💡 Verificar Ryanair CHQ→LIS em junho (voo sazonal — não está sempre disponível). Se não houver: ferry noturno Creta → Piraeus (~9h, ~€80 camarote para dois) + voo ATH → OPO.</div>
-</div>
-</div>
-<div class="days-wrap">
-<div class="sec-head c">📅 Roteiro Dia a Dia</div>
-<!-- DIAS 1-3: ATENAS -->
-<div class="day-block">
-<div class="day-header c">
-<div>
-<div class="day-num">Dias 1–3</div>
-<div class="day-loc">🏛 Atenas</div>
-</div>
-<div class="day-theme">Chegada · Acrópole · Museus · Base</div>
-</div>
-<div class="day-body"><div class="photo-gallery n3" data-gallery="athens"><div class="photo-item loading"></div><div class="photo-item loading"></div><div class="photo-item loading"></div></div>
+  <div class="lo-card">
+    <h3>🌿 Creta</h3>
+    <p>Desfiladeiro de Samaria, Elafonisi (lagoa cor-de-rosa), Balos, Knossos (palácio minoico), Chania. Uma viagem em si mesma — 10+ dias para fazer jus. Perfeitamente acessível de Atenas de barco (ferry noturno ~9h).</p>
+    <span class="lo-reason">Demasiado desvio para 26 dias. Merece uma viagem própria.</span>
+  </div>
 
-<div class="transport-row">
-<span class="transport-icon">✈</span>
-<span><b>Chegada dia 1:</b> Metro aeroporto → centro ~40 min, €10.50/pessoa.</span>
-</div>
-<div class="day-section">
-<div class="day-section-title">🗺 O que fazer</div>
-<div class="day-items">
-<div class="day-item"><b>Acrópole + Museu</b> (dia 2) — bilhete combinado €30 online. Manhã cedo.</div>
-<div class="day-item"><b>Museu Arqueológico Nacional</b> (dia 3) — ver colecção minoica antes de Creta: os frescos de Santorini (Akrotiri) em contexto. Bilhete €12.</div>
-<div class="day-item"><b>Exarchia</b> (noite dia 2) — jantar barato e autêntico. Taberna Telis: souvlaki mítico €4.</div>
-<div class="day-item">Se coincidir com <a class="wl" href="https://aefestival.gr/schedule/?lang=en" rel="noopener" target="_blank"><b>Athens Epidaurus Festival</b></a> (20+ junho): espectáculo no Odeão de Herodes Ático (concerto com Acrópole iluminada ao fundo). aefestival.gr.</div>
-</div>
-</div>
-<div class="sleep-box c">
-<div class="sleep-label c">🛏 Alojamento — Atenas (3 noites)</div>
-          Hostel quarto privado ou Airbnb fora do centro (Koukaki, Pangrati — mais barato que Monastiraki).
-          <br/><span class="sleep-price c">~€45–60/noite</span>
-</div>
-</div>
-</div>
-<!-- DIAS 4-5: DELPHI -->
-<div class="day-block">
-<div class="day-header c">
-<div>
-<div class="day-num">Dias 4–5</div>
-<div class="day-loc">🔮 Delphi</div>
-</div>
-<div class="day-theme">Umbigo do mundo · Oráculo de Apolo · Auriga de Bronze</div>
-</div>
-<div class="day-body"><div class="photo-gallery n3" data-gallery="delphi"><div class="photo-item loading"></div><div class="photo-item loading"></div><div class="photo-item loading"></div></div>
+  <div class="lo-card">
+    <h3>🎵 Plisskën Festival · Setembro</h3>
+    <p>O melhor festival alternativo grego. Cartões anteriores: Caribou, Kamasi Washington, Sun Ra Arkestra, Mulatu Astatke, Tinariwen, King Krule. Música que intersecta exactamente os vossos interesses. Peiraios 260 ou Technopolis.</p>
+    <span class="lo-reason">Festival principal previsto para Setembro 2026 — fora das datas de Junho/Julho.</span>
+  </div>
 
-<div class="transport-row">
-<span class="transport-icon">🚌</span>
-<span><b>Atenas → Delphi:</b> autocarro KTEL Terminal B (Liosíon) ~3h, €15/pessoa. 4 partidas/dia.</span>
-</div>
-<div class="day-section">
-<div class="day-section-title">🗺 O que fazer</div>
-<div class="day-items">
-<div class="day-item"><a class="wl" href="https://whc.unesco.org/en/list/393" rel="noopener" target="_blank"><b>Sítio arqueológico</b></a> (dia 4, manhã) — Templo de Apolo, Tesouro dos Atenienses, Estádio, Santuário. Bilhete €12 (inclui museu). Visitar de manhã.</div>
-<div class="day-item"><a class="wl" href="https://odysseus.culture.gr/h/1/eh151.jsp?obj_id=3316" rel="noopener" target="_blank"><b>Museu de Delphi</b></a> (dia 4, tarde) — o Auriga de Bronze (século V a.C.): uma das esculturas mais perfeitas da Antiguidade. Esfinge dos Naxianos. 2h.</div>
-<div class="day-item"><a class="wl" href="https://en.wikipedia.org/wiki/Galaxidi" rel="noopener" target="_blank"><b>Galaxidi</b></a> (excursão, dia 5) — aldeinha de pescadores a 30 min de Delphi junto ao Golfo de Corinto. Banho de mar, peixe grelhado (~€10/pessoa). Autocarro local.</div>
-<div class="day-item"><b>Pôr-do-sol</b> — de Delphi, o vale de oliveiras desce 10 km até ao Golfo. Com luz rasante ao final do dia, uma das vistas mais bonitas do interior grego.</div>
-</div>
-</div>
-<div class="sleep-box c">
-<div class="sleep-label c">🛏 Alojamento — Delphi (2 noites)</div>
-          Pensão familiar com vista para o vale — Hotel Acropole ou Sibilla Guesthouse.
-          <br/><span class="sleep-price c">~€42–58/noite</span>
-</div>
-</div>
-</div>
-<!-- DIAS 6-7: IOANNINA -->
-<div class="day-block">
-<div class="day-header c">
-<div>
-<div class="day-num">Dias 6–7</div>
-<div class="day-loc">🏰 Ioannina</div>
-</div>
-<div class="day-theme">Capital do Épiro · Lago · Ilha de Ali Pasha</div>
-</div>
-<div class="day-body"><div class="photo-gallery n3" data-gallery="ioannina"><div class="photo-item loading"></div><div class="photo-item loading"></div><div class="photo-item loading"></div></div>
+  <div class="lo-card">
+    <h3>🎧 Reworks · Tessalónica · Setembro</h3>
+    <p>Festival de som experimental e música clássica contemporânea, electrónica, world music. Top 10 mundial pela Resident Advisor. Realiza-se em Setembro em Tessalónica — cidade que vale a pena revisitar com mais tempo.</p>
+    <span class="lo-reason">16–20 Setembro 2026 — completamente fora das datas.</span>
+  </div>
 
-<div class="transport-row">
-<span class="transport-icon">🚌</span>
-<span><b>Delphi → Ioannina:</b> autocarro via Amfissa/Lamia ~4h30m (verificar horários KTEL Ioanninas). ~€22/pessoa.</span>
-</div>
-<div class="day-section">
-<div class="day-section-title">🗺 O que fazer</div>
-<div class="day-items">
-<div class="day-item"><a class="wl" href="https://en.wikipedia.org/wiki/Nissi,_Ioannina" rel="noopener" target="_blank"><b>Nissi — Ilha de Ali Pasha</b></a> (barco €2 ida e volta) — ilha habitada no meio do lago. Mosteiro onde Ali Pasha foi assassinado em 1822 — o governador otomano que governou metade da Grécia e inspirou Lord Byron. O mais estranho e fascinante da Grécia continental.</div>
-<div class="day-item"><a class="wl" href="https://en.wikipedia.org/wiki/Castle_of_Ioannina" rel="noopener" target="_blank"><b>Castelo de Ioannina (Its Kale)</b></a> — cidade velha dentro das muralhas. Museu de Ali Pasha, mesquita, torre. Vista para o lago.</div>
-<div class="day-item"><b>Bazar de Ioannina</b> — ourivesaria de prata trabalhada à mão, uma das mais ricas tradições artesanais da Grécia. Compras autênticas.</div>
-<div class="day-item"><b>Gastronomia do Épiro</b> — pita de espinafres e queijo, galópita (pudim de arroz). Completamente diferente do resto da Grécia. Refeição completa €8–10.</div>
-</div>
-</div>
-<div class="sleep-box c">
-<div class="sleep-label c">🛏 Alojamento — Ioannina (2 noites)</div>
-          Studio ou guesthouse na cidade velha — Airbnb ou booking.com, zona de Its Kale.
-          <br/><span class="sleep-price c">~€40–55/noite</span>
-</div>
-</div>
-</div>
-<!-- DIAS 8-12: ZAGORI -->
-<div class="day-block">
-<div class="day-header c">
-<div>
-<div class="day-num">Dias 8–12</div>
-<div class="day-loc">🏔 Zagori — Vikos — Papingo</div>
-</div>
-<div class="day-theme">Gorge mais profunda da Europa · 46 aldeias de pedra · Trilho mítico</div>
-</div>
-<div class="day-body"><div class="photo-gallery n3" data-gallery="zagori"><div class="photo-item loading"></div><div class="photo-item loading"></div><div class="photo-item loading"></div></div>
+  <div class="lo-card">
+    <h3>🎭 Epidauro · Peças de Julho+</h3>
+    <p><b>Os Persas</b> de Ésquilo (3–4 Jul): teatro político com 25 actores e música ao vivo de "The Boy". <b>Alceste</b> de Eurípides (17–18 Jul): experimento com música, som, movimento e acrobacia. <b>Eirene</b> de Aristófanes (24–25 Jul): música de Foivos Delivorias, comédia política. Todas no teatro antigo mais bonito do mundo.</p>
+    <span class="lo-reason">Todas depois de 2 Julho. Para quem puder ficar mais tempo ou regressar.</span>
+  </div>
 
-<div class="transport-row">
-<span class="transport-icon">🚌</span>
-<span><b>Ioannina → Zagori:</b> autocarro KTEL local para Monodendri ou Papingo (1–2 por dia, ~1h, €5). Ou táxi partilhado ~€20. <b>Verificar horários com antecedência</b> — muito poucos serviços.</span>
-</div>
-<div class="day-section">
-<div class="day-section-title">🗺 O que fazer (distribuir por 5 dias)</div>
-<div class="day-items">
-<div class="day-item"><a class="wl" href="https://en.wikipedia.org/wiki/Zagori_bridges" rel="noopener" target="_blank"><b>Chegada + Pontes de Arco</b></a> (dia 8) — pontes de pedra medieval sem argamassa (Kokkorou, Kalogeriko) construídas nos séculos XVII–XVIII. 5 km entre elas a pé. Mágico à última hora da tarde.</div>
-<div class="day-item"><a class="wl" href="https://en.wikipedia.org/wiki/Vikos_gorge" rel="noopener" target="_blank"><b>TRILHO DE VIKOS</b></a> (dia 9 — o dia grande) — Monodendri → Vikos → Papingo. 14 km, ~6h. O desfiladeiro mais profundo da Europa em relação à largura (900m). Levar 2.5L água, lanche, calçado de trekking. Arrancar às 8h.</div>
-<div class="day-item"><a class="wl" href="https://en.wikipedia.org/wiki/Papingo" rel="noopener" target="_blank"><b>Piscinas de Rogovo</b></a> (dia 10) — rios de neve derretida do Pindos formam poças naturais entre rochas. 30 min a pé de Papingo. Banho de água gelada revigorante.</div>
-<div class="day-item"><b>Aldeias Papingo, Tsepelovo, Kipi</b> (dias 10–11) — casas de pedra, ruas de mármore, fontanários do século XVII. Caminhar sem destino entre aldeia e aldeia.</div>
-<div class="day-item"><a class="wl" href="https://en.wikipedia.org/wiki/Vikos_gorge" rel="noopener" target="_blank"><b>Miradouro de Oxia</b></a> (dia 11) — vista completa do desfiladeiro a 1.000m de altitude. Acessível de carro (aluguer por 1 dia ~€35–40) ou guia local a cavalo.</div>
-</div>
-</div>
-<div class="sleep-box c">
-<div class="sleep-label c">🛏 Alojamento — Zagori (5 noites)</div>
-<b>4 noites guesthouse:</b> Astraka Guesthouse (Papingo) ou Archontiko Geki 1876 — guesthouses familiares de pedra com jantar incluído nalguns casos.
-          <br/><b>1 noite refúgio de montanha:</b> Astraka Mountain Refuge (~€15–20/cama, dormitório, ideal antes/depois do trilho). <span class="camp-tag">⛺ REFUGIO</span>
-<br/><span class="sleep-price c">🏠 Guesthouse ~€50–70/noite</span> <span class="sleep-price camp">⛺ Refúgio ~€15–20/cama</span>
-</div>
-<div class="tip-box">🌟 <b>Momento especial:</b> Papingo às 7h da manhã antes do trilho — cabras nas ruas de pedra, névoa nos vales, os penhascos brancos a emergir. A Grécia que quase ninguém conhece.</div>
-</div>
-</div>
-<!-- DIA 13: TRÂNSITO + FERRY NOTURNO -->
-<div class="day-block">
-<div class="day-header c">
-<div>
-<div class="day-num">Dia 13–14</div>
-<div class="day-loc">⛴ Trânsito + Ferry Noturno</div>
-</div>
-<div class="day-theme">Zagori → Ioannina → Atenas → Piraeus → Creta</div>
-</div>
-<div class="day-body">
-<div class="day-section">
-<div class="day-section-title">🚌 Logística</div>
-<div class="day-items">
-<div class="day-item"><b>Manhã (dia 13):</b> Zagori/Papingo → Ioannina (táxi/autocarro ~1h). Ioannina → Atenas: autocarro KTEL ~6h, €28/pessoa. Chegar ao fim da tarde.</div>
-<div class="day-item"><b>Noite (dia 13–14):</b> Ferry noturno <b>Piraeus → Heraklion</b> (Creta): ANEK Lines ou Minoan Lines. Partida ~22h, chegada ~7h30. <b>Camarote básico para dois: ~€70–90</b>. Poupa 1 noite de hotel.</div>
-<div class="day-item">Metro Atenas → Piraeus (linha verde, €1.40/pessoa). Embarque 1h antes da partida.</div>
-</div>
-</div>
-<div class="tip-box">🌅 Chegar a Heraklion ao amanhecer com as montanhas brancas de Creta a emergir do mar é uma das chegadas mais bonitas que existem. Acordar 30 min antes da chegada.</div>
-</div>
-</div>
-<!-- DIAS 15-16: HERAKLION -->
-<div class="day-block">
-<div class="day-header c">
-<div>
-<div class="day-num">Dias 14–15</div>
-<div class="day-loc">🏺 Heraklion + Knossos</div>
-</div>
-<div class="day-theme">Civilização Minoica · O melhor museu de Creta</div>
-</div>
-<div class="day-body"><div class="photo-gallery n3" data-gallery="heraklion"><div class="photo-item loading"></div><div class="photo-item loading"></div><div class="photo-item loading"></div></div>
+  <div class="lo-card">
+    <h3>🏺 Sítio de Vergina</h3>
+    <p>Tumba de Filipe II, pai de Alexandre Magno. A descoberta arqueológica mais importante do séc. XX grego. A 70km de Tessalónica — excursão de meio dia. O museu está literalmente dentro da tumba, com a temperatura original preservada.</p>
+    <span class="lo-reason">Possível como excursão de dia 2 em Tessalónica se houver interesse em arqueologia macedónia.</span>
+  </div>
 
-<div class="day-section">
-<div class="day-section-title">🗺 O que fazer</div>
-<div class="day-items">
-<div class="day-item"><a class="wl" href="https://www.heraklionmuseum.gr/en/" rel="noopener" target="_blank"><b>Museu Arqueológico de Heraklion</b></a> (dia 14, tarde) — o melhor museu minoico do mundo. Frescos do Palácio de Knossos (touros, golfinhos, a Deusa das Serpentes). 3h mínimo. Bilhete combinado com Knossos: €20.</div>
-<div class="day-item"><a class="wl" href="https://en.wikipedia.org/wiki/Knossos" rel="noopener" target="_blank"><b>Knossos</b></a> (dia 15, manhã) — o mais complexo palácio da Idade do Bronze europeia, há 3.500 anos. 5 km do centro, autocarro local nº2 (€1.70, 15 min). Ir de manhã.</div>
-<div class="day-item"><a class="wl" href="https://en.wikipedia.org/wiki/Koules_fortress" rel="noopener" target="_blank"><b>Fortaleza Koules e Porto</b></a> (dia 14, tarde) — fortaleza veneziana do século XVI, vista para a cidade velha. Bilhete €4.</div>
-<div class="day-item"><a class="wl" href="https://en.wikipedia.org/wiki/Heraklion" rel="noopener" target="_blank"><b>Mercado 1866</b></a> — especiarias, queijo graviera, mel de tomilho, azeite. Comprar provisões para os dias seguintes.</div>
-</div>
-</div>
-<div class="sleep-box c">
-<div class="sleep-label c">🛏 Alojamento — Heraklion (2 noites)</div>
-          Studio ou guesthouse na cidade velha. Zonas próximas do Museu e Knossos.
-          <br/><span class="sleep-price c">~€42–58/noite</span>
-</div>
-</div>
-</div>
-<!-- DIAS 17-21: CHANIA -->
-<div class="day-block">
-<div class="day-header c">
-<div>
-<div class="day-num">Dias 16–20</div>
-<div class="day-loc">🌊 Chania + Oeste de Creta</div>
-</div>
-<div class="day-theme">Porto veneziano · Samaria · Elafonisi · Anogia</div>
-</div>
-<div class="day-body"><div class="photo-gallery n4" data-gallery="chania"><div class="photo-item loading"></div><div class="photo-item loading"></div><div class="photo-item loading"></div><div class="photo-item loading"></div></div>
+  <div class="lo-card">
+    <h3>⚗️ outHEAR New Music Week · Tessalónica</h3>
+    <p>5ª edição de música contemporânea experimental: 34 compositores internacionais, Ensemble Klangforum Wien, composições para piano-autómato. Simpósio e concertos na Sala de Concertos de Tessalónica.</p>
+    <span class="lo-reason">13–21 Abril 2026 — chegam 7 Junho. Ideal para o perfil musical mas fora das datas.</span>
+  </div>
 
-<div class="transport-row">
-<span class="transport-icon">🚌</span>
-<span><b>Heraklion → Chania:</b> autocarro KTEL Creta, ~1h40m, €14/pessoa. Muito frequente.</span>
 </div>
-<div class="day-section">
-<div class="day-section-title">🗺 O que fazer</div>
-<div class="day-items">
-<div class="day-item"><a class="wl" href="https://en.wikipedia.org/wiki/Chania" rel="noopener" target="_blank"><b>Chania Old Town</b></a> (dia 16, tarde) — porto veneziano mais bonito de Creta. Farol otomano, mesquita veneziana. Jantar de polvo no porto (~€12/pessoa).</div>
-<div class="day-item"><a class="wl" href="https://en.wikipedia.org/wiki/Samaria_Gorge" rel="noopener" target="_blank"><b>Desfiladeiro de Samaria</b></a> (dia 17 — O GRANDE DIA) — 16 km de descida one-way. Autocarro Chania → Omalos (7h30, €7/pessoa), chegar a pé a Agia Roumeli (6h), barco para Sfakia (€12), autocarro para Chania. Levar 2.5L+ água, calçado de trekking. A mais famosa caminhada da Grécia.</div>
-<div class="day-item"><a class="wl" href="https://en.wikipedia.org/wiki/Elafonisi" rel="noopener" target="_blank"><b>Elafonisi</b></a> (dia 18) — lagoa de água cor-de-rosa por carapaças de coral. Uma das praias mais únicas da Europa. Autocarro Chania (~2h, €10 ida e volta).</div>
-<div class="day-item"><a class="wl" href="https://en.wikipedia.org/wiki/Balos_lagoon" rel="noopener" target="_blank"><b>Balos Lagoon</b></a> (dia 19) — excursão de barco de Kissamos (~€25/pessoa) ou carro alugado + 45 min a pé. Lagoa turquesa com ilhota e castelo veneziano.</div>
-<div class="day-item"><a class="wl" href="https://en.wikipedia.org/wiki/Anogia" rel="noopener" target="_blank"><b>Anogia</b></a> (dia 20) — aldeia do interior, berço da música cretan. Nikos Xylouris nasceu aqui. Restaurante com lyra ao vivo ao jantar. 1h de carro (aluguer 1 dia).</div>
-</div>
-</div>
-<div class="sleep-box c">
-<div class="sleep-label c">🛏 Alojamento — Chania (5 noites)</div>
-<b>2 noites camping:</b> <a class="wl" href="https://www.camping-chania.gr" rel="noopener" target="_blank"><b>Camping Chania</b></a> ou campismo em praia do sul — bungalow ou tenda. <span class="camp-tag">⛺ CAMPING</span>
-<br/><b>3 noites studio:</b> Airbnb/studio na cidade velha de Chania, próximo do porto.
-          <br/><span class="sleep-price camp">⛺ Camping ~€18–30/noite</span> <span class="sleep-price c">🏠 Studio ~€48–62/noite</span>
-</div>
-</div>
-</div>
-<!-- DIAS 21-23: WORKAWAY -->
-<div class="day-block">
-<div class="day-header c">
-<div>
-<div class="day-num">Dias 21–23</div>
-<div class="day-loc">🌱 Workaway em Creta</div>
-</div>
-<div class="day-theme">Quinta biológica · Comunidade · Alojamento e comida grátis</div>
-</div>
-<div class="day-body">
-<div class="day-section">
-<div class="day-section-title">🌿 Como funciona</div>
-<div class="day-items">
-<div class="day-item"><a class="wl" href="https://www.workaway.info" rel="noopener" target="_blank"><b>Workaway.info</b></a> — criar conta (€49/ano para casal). Pesquisar projectos em Creta: quintas de azeite, vinhedos, permacultura, albergues de surf. Em troca de <b>4–5h de trabalho/dia</b>, recebem alojamento e refeições incluídas.</div>
-<div class="day-item"><b>Tipos de projectos em Creta:</b> colheita de azeite/uva, jardinagem, cozinha, guiar visitantes em quinta biológica. Contactar com 4–6 semanas de antecedência, ler reviews, enviar mensagem pessoal.</div>
-<div class="day-item"><b>O valor real:</b> conhecer uma família cretan de dentro para fora. Comer da terra, perceber como é a ilha longe do turismo. Uma das experiências mais ricas da viagem — e gratuita.</div>
-</div>
-</div>
-<div class="sleep-box c">
-<div class="sleep-label c">🛏 Alojamento Workaway — 3 noites</div>
-          Incluído no Workaway — alojamento + refeições em troca de trabalho voluntário.
-          <br/><span class="sleep-price camp">✓ Grátis (€0)</span>
-</div>
-<div class="day-section">
-<div class="day-section-title">✈ Regresso — Dia 23</div>
-<div class="day-items">
-<div class="day-item"><b>Opção A:</b> Ryanair CHQ → Lisboa → Porto (verificar voo sazonal em <a class="wl" href="https://www.ryanair.com" rel="noopener" target="_blank">ryanair.com</a> para junho 2026).</div>
-<div class="day-item"><b>Opção B:</b> Ferry noturno Chania/Heraklion → Piraeus (~9h, €80 camarote) + voo ATH → OPO de manhã.</div>
-</div>
-</div>
-</div>
-</div>
-<!-- ORÇAMENTO C -->
-<div class="budget-wrap">
-<div class="budget-box">
-<div class="budget-head c">💶 Orçamento estimado — Itinerário C (23 dias, 2 pessoas)</div>
-<table class="budget-table">
-<tr><td>✈ Voos ida + regresso (Porto ↔ Grécia, melhor opção)</td><td class="val">€220–380</td></tr>
-<tr><td>🛏 Alojamento — 15 noites pagas (média €52/n)</td><td class="val">€780</td></tr>
-<tr><td>⛺ Camping — 4 noites bungalow/campsite (média €24/n) <span class="saving">↓ poupança: ~€110</span></td><td class="val">€96</td></tr>
-<tr><td>🌱 Workaway — 3 noites (alojamento + comida incluídos) <span class="saving">↓ poupança: ~€180</span></td><td class="val">€0</td></tr>
-<tr><td>⛴ Ferry noturno Piraeus → Heraklion (camarote básico)</td><td class="val">€80</td></tr>
-<tr><td>🍽 Alimentação — 20 dias pagos (~€21/dia para dois)</td><td class="val">€420</td></tr>
-<tr><td>🚌 Autocarros — Atenas→Delphi→Ioannina + Zagori + KTEL Creta</td><td class="val">€180</td></tr>
-<tr><td>🥾 Trilho Samaria (autocarro + barco regresso)</td><td class="val">€50</td></tr>
-<tr><td>⛵ Excursão Balos (barco colectivo)</td><td class="val">€50</td></tr>
-<tr><td>🏛 Entradas — Delphi, Knossos + museu, Acrópole</td><td class="val">€130</td></tr>
-<tr><td>🚗 Aluguer carro 2 dias Creta (Elafonisi + Anogia)</td><td class="val">€70</td></tr>
-<tr><td>🌱 Workaway conta anual (casal)</td><td class="val">€50</td></tr>
-<tr><td>☀️ Extras e imprevistos</td><td class="val">€130</td></tr>
-<tr class="budget-total c"><td>TOTAL ESTIMADO — 23 dias para dois</td><td class="val c">€2.256–2.416</td></tr>
-<tr><td colspan="2" style="text-align:right;font-size:.8rem;color:var(--muted);padding:8px 16px">≈ <b>€98–105/dia para dois</b> · Dentro do orçamento ✓✓</td></tr>
-</table>
-<div class="budget-note">💡 O mais económico dos três. Com tenda própria (~€70 extra), campismo desce para €12–15/noite e poupam mais €40–50 adicional. O Workaway é o maior "hack" de orçamento — 3 noites e 3 dias de comida grátis = ~€180 poupados.</div>
-</div>
-</div>
-</div>
-</div><!-- /itin c -->
-<!-- TABELA COMPARATIVA -->
-<div style="background:#fff;padding:44px 16px 56px">
-<div style="max-width:820px;margin:0 auto">
-<h2 style="text-align:center;font-size:1.4rem;font-weight:normal;color:var(--text);margin-bottom:6px">Como decidir?</h2>
-<p style="text-align:center;color:var(--muted);font-style:italic;font-size:.9rem;margin-bottom:28px">Comparação rápida · Orçamentos já com poupanças aplicadas</p>
-<table class="compare-table">
-<tr>
-<th style="text-align:left;background:#1a1a2e;padding:12px 14px">Critério</th>
-<th class="a">🏛️ A — Clássica</th>
-<th class="b">🎵 B — Norte</th>
-<th class="c">🌿 C — Natureza</th>
-</tr>
-<tr><td>💶 Total 2 pax (com voos)</td><td class="best" style="color:var(--blue)">€2.608–2.878</td><td class="best" style="color:var(--green)">€2.435–2.625</td><td class="best" style="color:var(--purple)">€2.256–2.416</td></tr>
-<tr><td>💶 Custo/dia para dois</td><td>~€118–131</td><td>~€106–114</td><td class="best" style="color:var(--purple)">~€98–105 ✓</td></tr>
-<tr><td>🏛️ História antiga</td><td class="best">★★★★★</td><td>★★★</td><td>★★★★</td></tr>
-<tr><td>🥾 Trekking / Natureza</td><td>★★</td><td>★★★</td><td class="best">★★★★★</td></tr>
-<tr><td>🎵 Festivais de música</td><td class="best">★★★★★</td><td class="best">★★★★★</td><td>★★★</td></tr>
-<tr><td>🏖️ Praias / Mar</td><td class="best">★★★★★</td><td>★★★★</td><td>★★★</td></tr>
-<tr><td>🏘️ Comunidades locais</td><td>★★★</td><td>★★★★</td><td class="best">★★★★★</td></tr>
-<tr><td>🌿 Off-beat / Autêntico</td><td>★★★</td><td>★★★★</td><td class="best">★★★★★</td></tr>
-<tr><td>🗺️ Logística simples</td><td class="best">★★★★★</td><td>★★★★</td><td>★★★</td></tr>
-<tr><td>⛺ Campismo possível</td><td>Naxos + Milos</td><td>Skiathos + Skopelos + Agistri</td><td class="best">Creta (+ Zagori)</td></tr>
-</table>
-</div>
-</div>
+</div><!-- /leftout tab -->
+
+<!-- FOOTER -->
 <div class="footer">
-  Grécia Junho 2026 · Versão orçamento revisto · Abril 2026<br/>
-  Preços de voo: estimativas para reserva com 4+ meses de antecedência. Verificar em <a class="wl" href="https://www.skyscanner.pt" rel="noopener" target="_blank">skyscanner.pt</a>, <a class="wl" href="https://www.google.com/flights" rel="noopener" target="_blank">google.com/flights</a> ou <a class="wl" href="https://www.ryanair.com" rel="noopener" target="_blank">ryanair.com</a>
+  Grécia Junho 2026 · Filipe & Inês · Porto OPO → Tessalónica SKG · Regresso ATH → Porto OPO 2 Jul<br>
+  Verificar datas e preços: <a href="https://www.ferries.gr" style="color:rgba(255,255,255,.5)">ferries.gr</a> · <a href="https://aefestival.gr/schedule/?lang=en" style="color:rgba(255,255,255,.5)">aefestival.gr</a> · <a href="https://www.plisskenfestival.gr/events" style="color:rgba(255,255,255,.5)">plisskenfestival.gr</a>
 </div>
-<script>
-function show(id) {
-  ['a','b','c'].forEach(t => {
-    document.getElementById(t).classList.remove('on');
-    document.getElementById('dot-'+t).classList.remove('on');
-  });
-  document.getElementById(id).classList.add('on');
-  document.getElementById('dot-'+id).classList.add('on');
-  window.scrollTo({top:0,behavior:'smooth'});
-}
-</script>
 
+<!-- GALLERY JS -->
 <script>
-const GALLERY_DATA = {"athens": [["Parthenon", "Part\u00e9non", "https://www.theacropolismuseum.gr/en"], ["Anafiotika", "Anafiotika", "https://en.wikipedia.org/wiki/Anafiotika"], ["Monastiraki", "Monastiraki", "https://en.wikipedia.org/wiki/Monastiraki"]], "nafplio": [["Nafplio", "Nafplio", "https://en.wikipedia.org/wiki/Nafplio"], ["Palamidi", "Castelo de Palamidi", "https://en.wikipedia.org/wiki/Palamidi"], ["Bourtzi_(Nafplion)", "Bourtzi", "https://en.wikipedia.org/wiki/Bourtzi_(Nafplion)"]], "epidaurus": [["Epidaurus", "Teatro de Epidauro", "https://whc.unesco.org/en/list/491"], ["Athens_Epidaurus_Festival", "Festival 2026", "https://aefestival.gr/schedule/?lang=en"]], "monemvasia": [["Monemvasia", "Monemvasia", "https://en.wikipedia.org/wiki/Monemvasia"], ["Gefyra,_Laconia", "Vista do mar Egeu", "https://en.wikipedia.org/wiki/Monemvasia"]], "naxos": [["Portara_(Naxos)", "Portara ao p\u00f4r-do-sol", "https://en.wikipedia.org/wiki/Portara_(Naxos)"], ["Naxos", "Ilha de Naxos", "https://en.wikipedia.org/wiki/Naxos"], ["Agia_Anna,_Naxos", "Praia de Maragas", "https://www.campingmaragas.gr"]], "paros": [["Naoussa,_Paros", "Porto de Naoussa", "https://en.wikipedia.org/wiki/Naoussa,_Paros"], ["Panagia_Ekatontapiliani", "Igreja das 100 Portas", "https://en.wikipedia.org/wiki/Panagia_Ekatontapiliani"], ["Paros", "Ilha de Paros", "https://en.wikipedia.org/wiki/Paros"]], "milos": [["Sarakiniko", "Sarakiniko", "https://en.wikipedia.org/wiki/Sarakiniko"], ["Kleftiko", "Kleftiko", "https://en.wikipedia.org/wiki/Kleftiko"], ["Milos", "Ilha de Milos", "https://en.wikipedia.org/wiki/Milos"]], "thessaloniki": [["White_Tower_of_Thessaloniki", "Torre Branca", "https://en.wikipedia.org/wiki/White_Tower_of_Thessaloniki"], ["Thessaloniki", "Tessal\u00f3nica", "https://en.wikipedia.org/wiki/Thessaloniki"], ["Rotunda_of_Galerius", "Rotunda de Gal\u00e9rio", "https://en.wikipedia.org/wiki/Rotunda_of_Galerius"]], "meteora": [["Meteora", "Mosteiros de Meteora", "https://whc.unesco.org/en/list/455"], ["Varlaam_monastery", "Mosteiro de Varlaam", "https://en.wikipedia.org/wiki/Varlaam_monastery"], ["Great_Meteoron", "Grande Meteoron", "https://en.wikipedia.org/wiki/Great_Meteoron"]], "skiathos": [["Koukounaries", "Praia de Koukounaries", "https://en.wikipedia.org/wiki/Koukounaries"], ["Skiathos", "Ilha de Skiathos", "https://en.wikipedia.org/wiki/Skiathos"]], "alonnisos": [["Alonnisos", "Ilha de Alonnisos", "https://en.wikipedia.org/wiki/Alonnisos"], ["National_Marine_Park_of_Alonnisos_Northern_Sporades", "Parque Marinho", "https://en.wikipedia.org/wiki/National_Marine_Park_of_Alonnisos_Northern_Sporades"]], "skopelos": [["Skopelos", "Ilha de Skopelos", "https://en.wikipedia.org/wiki/Skopelos"], ["Agios_Ioannis_chapel", "Capela Agios Ioannis", "https://en.wikipedia.org/wiki/Agios_Ioannis_chapel"]], "agistri": [["Agistri", "Ilha de Agistri", "https://en.wikipedia.org/wiki/Agistri"], ["Saronic_Gulf", "Golfo Sar\u00f3nico", "https://en.wikipedia.org/wiki/Saronic_Gulf"]], "delphi": [["Delphi", "Delphi", "https://whc.unesco.org/en/list/393"], ["Temple_of_Apollo_(Delphi)", "Templo de Apolo", "https://en.wikipedia.org/wiki/Temple_of_Apollo_(Delphi)"], ["Delphi_Archaeological_Museum", "Museu de Delphi", "https://en.wikipedia.org/wiki/Delphi_Archaeological_Museum"]], "ioannina": [["Ioannina", "Ioannina", "https://en.wikipedia.org/wiki/Ioannina"], ["Nissi,_Ioannina", "Ilha de Nissi", "https://en.wikipedia.org/wiki/Nissi,_Ioannina"], ["Castle_of_Ioannina", "Castelo de Ioannina", "https://en.wikipedia.org/wiki/Castle_of_Ioannina"]], "zagori": [["Vikos_gorge", "Desfiladeiro de Vikos", "https://en.wikipedia.org/wiki/Vikos_gorge"], ["Papingo", "Aldeia de Papingo", "https://en.wikipedia.org/wiki/Papingo"], ["Zagori", "Zagori", "https://en.wikipedia.org/wiki/Zagori"]], "heraklion": [["Knossos", "Pal\u00e1cio de Knossos", "https://en.wikipedia.org/wiki/Knossos"], ["Heraklion_Archaeological_Museum", "Museu de Heraklion", "https://www.heraklionmuseum.gr/en/"], ["Koules_fortress", "Fortaleza Koules", "https://en.wikipedia.org/wiki/Koules_fortress"]], "chania": [["Chania", "Porto de Chania", "https://en.wikipedia.org/wiki/Chania"], ["Samaria_Gorge", "Desfiladeiro de Samaria", "https://en.wikipedia.org/wiki/Samaria_Gorge"], ["Elafonisi", "Praia de Elafonisi", "https://en.wikipedia.org/wiki/Elafonisi"], ["Balos_lagoon", "Balos Lagoon", "https://en.wikipedia.org/wiki/Balos_lagoon"]]};
+const GALLERY_DATA = {"thessaloniki": [["Thessaloniki", "Tessal\u00f3nica", "https://en.wikipedia.org/wiki/Thessaloniki"], ["White_Tower_of_Thessaloniki", "Torre Branca", "https://en.wikipedia.org/wiki/White_Tower_of_Thessaloniki"], ["Rotunda_of_Galerius", "Rotunda (UNESCO)", "https://whc.unesco.org/en/list/456"]], "olympus": [["Mount_Olympus", "Monte Olimpo", "https://en.wikipedia.org/wiki/Mount_Olympus"], ["Enipeas_gorge", "Garganta de Enipeas", "https://en.wikipedia.org/wiki/Enipeas"], ["Litochoro", "Vila de Litochoro", "https://en.wikipedia.org/wiki/Litochoro"]], "meteora": [["Meteora", "Mosteiros de Meteora", "https://whc.unesco.org/en/list/455"], ["Varlaam_monastery", "Mosteiro de Varlaam", "https://en.wikipedia.org/wiki/Varlaam_monastery"], ["Great_Meteoron", "Grande Meteoron", "https://en.wikipedia.org/wiki/Great_Meteoron"]], "alonnisos": [["Alonnisos", "Ilha de Alonnisos", "https://en.wikipedia.org/wiki/Alonnisos"], ["National_Marine_Park_of_Alonnisos_Northern_Sporades", "Parque Marinho Nacional", "https://en.wikipedia.org/wiki/National_Marine_Park_of_Alonnisos_Northern_Sporades"]], "delphi": [["Delphi", "Delphi", "https://whc.unesco.org/en/list/393"], ["Temple_of_Apollo_(Delphi)", "Templo de Apolo", "https://en.wikipedia.org/wiki/Temple_of_Apollo_(Delphi)"], ["Delphi_Archaeological_Museum", "Auriga de Bronze", "https://en.wikipedia.org/wiki/Delphi_Archaeological_Museum"]], "nafplio": [["Nafplio", "Nafplio", "https://en.wikipedia.org/wiki/Nafplio"], ["Palamidi", "Castelo de Palamidi", "https://en.wikipedia.org/wiki/Palamidi"], ["Epidaurus", "Teatro de Epidauro", "https://whc.unesco.org/en/list/491"]], "athens": [["Parthenon", "Part\u00e9non", "https://www.theacropolismuseum.gr/en"], ["Acropolis_of_Athens", "Acr\u00f3pole", "https://en.wikipedia.org/wiki/Acropolis_of_Athens"], ["Exarchia", "Bairro de Exarchia", "https://en.wikipedia.org/wiki/Exarchia"]], "naxos": [["Portara_(Naxos)", "Portara de Apolo", "https://en.wikipedia.org/wiki/Portara_(Naxos)"], ["Naxos", "Ilha de Naxos", "https://en.wikipedia.org/wiki/Naxos"], ["Agia_Anna,_Naxos", "Praia de Maragas", "https://www.campingmaragas.gr"]], "milos": [["Sarakiniko", "Sarakiniko", "https://en.wikipedia.org/wiki/Sarakiniko"], ["Kleftiko", "Kleftiko", "https://en.wikipedia.org/wiki/Kleftiko"], ["Milos", "Ilha de Milos", "https://en.wikipedia.org/wiki/Milos"]]};
 
 async function loadGallery(el) {
   const key = el.dataset.gallery;
   const entries = GALLERY_DATA[key] || [];
-
-  // Replace loading placeholders
-  const items = el.querySelectorAll('.photo-item');
-
-  const promises = entries.map(([article, caption, link], i) =>
+  const promises = entries.map(([article, caption, link]) =>
     fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(article)}`)
       .then(r => r.ok ? r.json() : null)
       .then(data => {
         if (!data?.thumbnail?.source) return null;
-        // Upgrade to high-resolution: replace any NNNpx- with 1200px-
         const bigImg = data.thumbnail.source.replace(/\/\d+px-/, '/1200px-');
         return { img: bigImg, caption, link };
       })
       .catch(() => null)
   );
-
-  const results = await Promise.all(promises);
-  const good = results.filter(Boolean);
-
-  // Clear and rebuild
+  const results = (await Promise.all(promises)).filter(Boolean);
   el.innerHTML = '';
-  let shown = 0;
-  good.forEach(({ img, caption, link }) => {
+  results.forEach(({ img, caption, link }) => {
     const div = document.createElement('div');
     div.className = 'photo-item';
-    div.innerHTML = `
-      <a href="${link}" target="_blank" rel="noopener">
-        <img src="${img}" alt="${caption}" loading="lazy"
-             onerror="this.closest('.photo-item').classList.add('failed')">
-      </a>
-      <div class="photo-caption">${caption}</div>`;
+    div.innerHTML = `<a href="${link}" target="_blank" rel="noopener"><img src="${img}" alt="${caption}" loading="lazy" onerror="this.closest('.photo-item').style.display='none'"></a><div class="photo-caption">${caption}</div>`;
     el.appendChild(div);
-    shown++;
   });
-
-  // Update grid class based on actual results
-  el.className = `photo-gallery n${Math.min(shown, 4)}`;
-  if (shown === 0) el.remove();
+  el.className = `photo-gallery n${Math.min(results.length, 3)}`;
+  if (!results.length) el.remove();
 }
 
-function initGalleries() {
-  document.querySelectorAll('.photo-gallery[data-gallery]').forEach(loadGallery);
+function switchTab(id) {
+  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
 }
 
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initGalleries);
-} else {
-  initGalleries();
-}
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('[data-gallery]').forEach(loadGallery);
+});
 </script>
 </body>
 </html>
